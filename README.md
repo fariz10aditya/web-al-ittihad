@@ -40,8 +40,17 @@
    - `berita.html`: Kabar madrasah dan dokumentasi prestasi (Juara Lomba Cipta Menu Kuliner Kabupaten Mojokerto, Juara Menulis Puisi Pelajar, Wisuda Tahfidz, ANBK).
    - `galeri.html`: Galeri foto kegiatan belajar mengajar, laboratorium komputer, hadrah/banjari, kepramukaan, dan kehidupan santri asrama.
    - `kontak.html`: Peta interaktif Google Maps mengarah presisi ke Jl. Raden Wijaya No. 105 Tawangsari Trowulan, informasi jam kerja kantor, dan tombol tanya cepat WhatsApp.
+   - `admin.html`: **Panel Back-End Admin & CMS** untuk mengelola seluruh konten website, data calon siswa PPDB (bisa konfirmasi WA & export Excel), ganti visi-misi, berita, nomor WA, dan backup data.
 
-4. **Widget Tambahan:**
+4. **Portal Back-End Admin CMS (`admin.html`):**
+   - **Login Keamanan:** Username bawaan `admin` & Password bawaan `alittihad2026` (bisa diganti).
+   - **Manajemen PPDB:** Data pendaftar masuk, ubah status (Pending/Terverifikasi/Diterima/Ditolak), tombol 1-klik kirim WA konfirmasi ke orang tua/siswa, cetak kartu bukti pendaftaran, tambah pendaftar offline, dan **Export ke file Excel/CSV**.
+   - **Pengaturan Profil & Kontak:** Edit nama sekolah, NPSN, nomor WhatsApp tujuan pendaftaran, email, alamat, visi & misi secara langsung tanpa menyentuh kode.
+   - **Pengaturan Berita & Prestasi:** Tulis, edit, dan hapus artikel warta/prestasi santri.
+   - **Manajemen Ekstrakurikuler & FAQ:** Tambah/hapus kegiatan ekskul dan tanya jawab madrasah.
+   - **Backup & Restore:** Unduh cadangan sistem format `.json` dan pulihkan data kapan saja.
+
+5. **Widget Tambahan:**
    - Tombol mengambang (*Floating WhatsApp Button*) dengan efek denyut (*pulse glow*) untuk konsultasi cepat.
    - Tombol *Scroll to Top* otomatis saat menggulir halaman.
    - Menu drawer mobile yang halus dan ringan.

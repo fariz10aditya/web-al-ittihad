@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
@@ -18,17 +18,35 @@
         extend: {
           colors: {
             brand: {
-              50: '#ecfdf5',
-              100: '#d1fae5',
-              600: '#059669',
-              700: '#047857',
-              800: '#064e3b',
-              900: '#022c22',
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e3a8a',
+              900: '#172554',
+              950: '#0f172a',
+            },
+            cream: {
+              50: '#fdfbf7',
+              100: '#fbf7ee',
+              200: '#f5eedb',
+              300: '#eddcc0',
+              400: '#e0c69e',
+              500: '#cfa86e',
+              600: '#b5894b',
+              700: '#8c642c',
+              800: '#6b4a1f',
+              900: '#422c10',
             },
             gold: {
               400: '#fbbf24',
               500: '#f59e0b',
               600: '#d97706',
+              700: '#b45309',
             }
           },
           fontFamily: {
@@ -38,14 +56,15 @@
         }
       }
     }
+    }
   </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-600 selection:text-white">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-700 selection:text-white">
 
   <!-- TOP BAR -->
-  <aside class="bg-brand-900 text-emerald-100 text-xs py-2 px-4 border-b border-brand-800">
+  <aside class="bg-brand-900 text-cream-100 text-xs py-2 px-4 border-b border-brand-800">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
       <div class="flex items-center gap-4">
         <span><i class="fa-solid fa-certificate text-gold-400 mr-1"></i> NPSN: <strong>20584241</strong></span>
@@ -56,7 +75,7 @@
       </div>
       <div class="flex items-center gap-4">
         <a href="https://wa.me/6285706666126" target="_blank" rel="noopener noreferrer" class="hover:text-gold-400 transition flex items-center gap-1">
-          <i class="fa-brands fa-whatsapp text-emerald-400"></i> 0857-0666-6126
+          <i class="fa-brands fa-whatsapp text-gold-400"></i> 0857-0666-6126
         </a>
       </div>
     </div>
@@ -69,28 +88,28 @@
         <a href="index.html" class="flex items-center gap-3">
           <img src="assets/images/logo.svg" alt="Logo MA Al-Ittihad" class="w-12 h-12">
           <div>
-            <span class="text-[10px] uppercase font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded">YPIS AL-ITTIHAD</span>
+            <span class="text-[10px] uppercase font-bold text-brand-800 bg-cream-100 px-1.5 py-0.5 rounded">YPIS AL-ITTIHAD</span>
             <div class="text-base sm:text-lg font-extrabold text-brand-900 leading-tight">MA AL-ITTIHAD</div>
             <p class="text-[11px] text-slate-500">Tawangsari • Trowulan</p>
           </div>
         </a>
 
         <nav class="hidden lg:flex items-center gap-1">
-          <a href="index.html" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-emerald-700 rounded-lg">Beranda</a>
-          <a href="profil.html" class="px-3 py-2 text-sm font-semibold text-emerald-700 bg-emerald-50/80 rounded-lg">Profil</a>
-          <a href="akademik.html" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-emerald-700 rounded-lg">Akademik</a>
-          <a href="index.html#ekstrakurikuler" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-emerald-700 rounded-lg">Ekstrakurikuler</a>
-          <a href="index.html#fasilitas" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-emerald-700 rounded-lg">Fasilitas</a>
-          <a href="berita.html" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-emerald-700 rounded-lg">Berita</a>
-          <a href="galeri.html" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-emerald-700 rounded-lg">Galeri</a>
-          <a href="kontak.html" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-emerald-700 rounded-lg">Kontak</a>
+          <a href="index.html" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-brand-800 rounded-lg">Beranda</a>
+          <a href="profil.html" class="px-3 py-2 text-sm font-semibold text-brand-800 bg-cream-100/80 rounded-lg">Profil</a>
+          <a href="akademik.html" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-brand-800 rounded-lg">Akademik</a>
+          <a href="index.html#ekstrakurikuler" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-brand-800 rounded-lg">Ekstrakurikuler</a>
+          <a href="index.html#fasilitas" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-brand-800 rounded-lg">Fasilitas</a>
+          <a href="berita.html" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-brand-800 rounded-lg">Berita</a>
+          <a href="galeri.html" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-brand-800 rounded-lg">Galeri</a>
+          <a href="kontak.html" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-brand-800 rounded-lg">Kontak</a>
         </nav>
 
         <div class="flex items-center gap-3">
-          <a href="ppdb.html" class="hidden sm:inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs px-4 py-2 rounded-xl shadow">
+          <a href="ppdb.html" class="hidden sm:inline-flex items-center gap-2 bg-brand-700 hover:bg-brand-800 text-white font-semibold text-xs px-4 py-2 rounded-xl shadow">
             <i class="fa-solid fa-user-plus"></i> PPDB Online
           </a>
-          <button type="button" id="mobileMenuToggle" class="lg:hidden p-2 text-slate-700 hover:text-emerald-700">
+          <button type="button" id="mobileMenuToggle" class="lg:hidden p-2 text-slate-700 hover:text-brand-800">
             <i class="fa-solid fa-bars text-xl"></i>
           </button>
         </div>
@@ -101,7 +120,7 @@
   <!-- MOBILE MENU DRAWER -->
   <div id="mobileMenuBackdrop" class="fixed inset-0 bg-black/50 z-50 hidden backdrop-blur-sm"></div>
   <div id="mobileMenuDrawer" class="fixed top-0 right-0 w-80 max-w-full h-full bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
-    <div class="p-5 border-b border-slate-100 flex items-center justify-between bg-emerald-50/50">
+    <div class="p-5 border-b border-slate-100 flex items-center justify-between bg-cream-100/60">
       <div class="flex items-center gap-2">
         <img src="assets/images/logo.svg" alt="Logo" class="w-8 h-8">
         <span class="font-bold text-sm text-brand-900">MA AL-ITTIHAD</span>
@@ -112,7 +131,7 @@
     </div>
     <div class="p-5 flex-1 overflow-y-auto space-y-1">
       <a href="index.html" class="block px-3 py-2 text-slate-700 hover:bg-slate-50 rounded-lg font-medium text-sm">Beranda</a>
-      <a href="profil.html" class="block px-3 py-2 text-emerald-800 bg-emerald-50 rounded-lg font-bold text-sm">Profil & Sejarah</a>
+      <a href="profil.html" class="block px-3 py-2 text-brand-900 bg-cream-100 rounded-lg font-bold text-sm">Profil & Sejarah</a>
       <a href="akademik.html" class="block px-3 py-2 text-slate-700 hover:bg-slate-50 rounded-lg font-medium text-sm">Program & Jurusan</a>
       <a href="ppdb.html" class="block px-3 py-2 text-slate-700 hover:bg-slate-50 rounded-lg font-medium text-sm">PPDB Online</a>
       <a href="berita.html" class="block px-3 py-2 text-slate-700 hover:bg-slate-50 rounded-lg font-medium text-sm">Kabar & Prestasi</a>
@@ -124,7 +143,7 @@
   <!-- BREADCRUMB & PAGE HEADER -->
   <section class="bg-pattern-dark text-white py-14 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="flex items-center gap-2 text-xs text-emerald-300 mb-3">
+      <div class="flex items-center gap-2 text-xs text-cream-300 mb-3">
         <a href="index.html" class="hover:underline">Beranda</a>
         <i class="fa-solid fa-chevron-right text-[10px]"></i>
         <span class="text-white font-medium">Profil Madrasah</span>
@@ -143,7 +162,7 @@
       <!-- SEJARAH SINGKAT -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <div class="lg:col-span-7 space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed">
-          <span class="text-xs font-bold text-emerald-700 uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+          <span class="text-xs font-bold text-brand-800 uppercase tracking-widest bg-cream-100 px-3 py-1 rounded-full border border-cream-300">
             JEJAK HISTORIS
           </span>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-900 mt-2">
@@ -160,27 +179,44 @@
           </p>
         </div>
 
-        <div class="lg:col-span-5">
-          <div class="bg-emerald-50 border border-emerald-200 rounded-3xl p-6 sm:p-8 space-y-6">
-            <h3 class="text-lg font-bold text-brand-900 flex items-center gap-2 border-b border-emerald-200 pb-3">
-              <i class="fa-solid fa-landmark text-emerald-600"></i> Tonggak Sejarah Lembaga
+        <div class="lg:col-span-5 space-y-6">
+          <!-- Card Foto Pendiri & Kampus -->
+          <div class="bg-white rounded-3xl p-4 border border-cream-200 shadow-md overflow-hidden">
+            <div class="relative rounded-2xl overflow-hidden h-52 group">
+              <img src="assets/images/foto-gedung-pesantren.jpg" alt="Kampus Pesantren Al-Ittihad" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-950/90 via-brand-950/20 to-transparent"></div>
+              <div class="absolute bottom-3 left-3 right-3 flex items-center gap-3 bg-brand-900/80 backdrop-blur-sm p-2.5 rounded-xl border border-cream-400/30">
+                <img src="assets/images/foto-kh-albazi-nawawi.jpg" alt="KH. Albazi Nawawi" class="w-12 h-12 rounded-full object-cover border-2 border-gold-400 shadow shrink-0">
+                <div class="text-white min-w-0">
+                  <div class="text-[10px] uppercase font-bold text-gold-400">Pendiri MA Al-Ittihad (2000)</div>
+                  <h4 class="text-xs font-bold leading-tight truncate">KH. Albazi Nawawi</h4>
+                  <p class="text-[10px] text-cream-200 truncate">Pengasuh PPTQ Al-Ittihad Tawangsari</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tonggak Sejarah -->
+          <div class="bg-cream-100 border border-cream-200 rounded-3xl p-6 sm:p-8 space-y-4 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-900 flex items-center gap-2 border-b border-cream-300 pb-3">
+              <i class="fa-solid fa-landmark text-brand-700"></i> Tonggak Sejarah Lembaga
             </h3>
             
             <div class="space-y-4 text-xs sm:text-sm">
               <div class="flex gap-4">
-                <span class="font-extrabold text-emerald-800 font-mono w-14 shrink-0">1956</span>
+                <span class="font-extrabold text-brand-800 font-mono w-14 shrink-0">1956</span>
                 <p class="text-slate-700">Pondok Pesantren Al-Ittihad dirintis oleh KH. Nawawi Ramli sebagai pusat kajian ilmu agama dan tahfidz Al-Qur'an.</p>
               </div>
               <div class="flex gap-4">
-                <span class="font-extrabold text-emerald-800 font-mono w-14 shrink-0">2000</span>
+                <span class="font-extrabold text-brand-800 font-mono w-14 shrink-0">2000</span>
                 <p class="text-slate-700">Madrasah Aliyah (MA) Al-Ittihad didirikan oleh KH. Albazi Nawawi guna menjawab kebutuhan pendidikan formal tingkat atas.</p>
               </div>
               <div class="flex gap-4">
-                <span class="font-extrabold text-emerald-800 font-mono w-14 shrink-0">2017</span>
+                <span class="font-extrabold text-brand-800 font-mono w-14 shrink-0">2017</span>
                 <p class="text-slate-700">Penerbitan SK Izin Operasional Kemenag Nomor: MAS/16.0033/2017 tanggal 20 September 2017.</p>
               </div>
               <div class="flex gap-4">
-                <span class="font-extrabold text-emerald-800 font-mono w-14 shrink-0">Kini</span>
+                <span class="font-extrabold text-brand-800 font-mono w-14 shrink-0">Kini</span>
                 <p class="text-slate-700">Terakreditasi B, mengembangkan integrasi Kurikulum Merdeka, Tahfidz Al-Qur'an, dan Balai Latihan Vokasi.</p>
               </div>
             </div>
@@ -192,18 +228,18 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         
         <!-- Visi Card -->
-        <div class="bg-gradient-to-br from-brand-900 to-emerald-800 text-white rounded-3xl p-8 sm:p-10 shadow-xl border border-emerald-700 flex flex-col justify-between">
+        <div class="bg-gradient-to-br from-brand-900 to-brand-900 text-white rounded-3xl p-8 sm:p-10 shadow-xl border border-brand-800 flex flex-col justify-between">
           <div>
             <div class="w-14 h-14 rounded-2xl bg-gold-500 text-brand-900 flex items-center justify-center text-2xl mb-6 shadow">
               <i class="fa-solid fa-bullseye"></i>
             </div>
             <span class="text-xs font-bold text-gold-400 uppercase tracking-widest">Cita-Cita Luhur</span>
             <h2 class="text-2xl font-black text-white mt-1 mb-4">Visi Madrasah</h2>
-            <blockquote class="text-lg text-emerald-100 font-medium italic leading-relaxed border-l-4 border-gold-400 pl-4 my-4">
+            <blockquote class="text-lg text-cream-100 font-medium italic leading-relaxed border-l-4 border-gold-400 pl-4 my-4">
               "Terwujudnya Generasi Santri yang Qur'ani, Berakhlakul Karimah, Unggul dalam Prestasi Intelektual, serta Mandiri dalam Berkehidupan Bermasyarakat."
             </blockquote>
           </div>
-          <p class="text-xs text-emerald-300 mt-6 pt-4 border-t border-emerald-700/60">
+          <p class="text-xs text-cream-300 mt-6 pt-4 border-t border-brand-800/60">
             Diterjemahkan dalam setiap hembusan nafas pembelajaran, ibadah harian, dan kegiatan santri di lingkungan kampus.
           </p>
         </div>
@@ -211,27 +247,27 @@
         <!-- Misi Card -->
         <div class="bg-slate-50 rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-sm flex flex-col justify-between">
           <div>
-            <div class="w-14 h-14 rounded-2xl bg-emerald-600 text-white flex items-center justify-center text-2xl mb-6 shadow">
+            <div class="w-14 h-14 rounded-2xl bg-brand-700 text-white flex items-center justify-center text-2xl mb-6 shadow">
               <i class="fa-solid fa-list-check"></i>
             </div>
-            <span class="text-xs font-bold text-emerald-700 uppercase tracking-widest">Langkah Nyata</span>
+            <span class="text-xs font-bold text-brand-800 uppercase tracking-widest">Langkah Nyata</span>
             <h2 class="text-2xl font-black text-slate-900 mt-1 mb-4">Misi Madrasah</h2>
             
             <ul class="space-y-3 text-xs sm:text-sm text-slate-700">
               <li class="flex items-start gap-3">
-                <i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i>
+                <i class="fa-solid fa-circle-check text-brand-700 mt-1 shrink-0"></i>
                 <span>Menyelenggarakan pendidikan Islam yang memadukan kurikulum Kemenag dengan pembelajaran Al-Qur'an dan kitab kuning.</span>
               </li>
               <li class="flex items-start gap-3">
-                <i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i>
+                <i class="fa-solid fa-circle-check text-brand-700 mt-1 shrink-0"></i>
                 <span>Membiasakan pengamalan akhlak mulia dan adab santri dalam pergaulan sehari-hari berlandaskan ajaran Ahlussunnah wal Jama'ah.</span>
               </li>
               <li class="flex items-start gap-3">
-                <i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i>
+                <i class="fa-solid fa-circle-check text-brand-700 mt-1 shrink-0"></i>
                 <span>Meningkatkan mutu proses belajar mengajar sains, teknologi, dan bahasa asing (Arab & Inggris) secara aktif.</span>
               </li>
               <li class="flex items-start gap-3">
-                <i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i>
+                <i class="fa-solid fa-circle-check text-brand-700 mt-1 shrink-0"></i>
                 <span>Membekali peserta didik dengan keterampilan hidup (life skills), kewirausahaan kreatif, dan kemandirian mental.</span>
               </li>
             </ul>
@@ -240,10 +276,50 @@
 
       </div>
 
+      <!-- DOKUMENTASI MASYAYIKH & TRADISI PESANTREN -->
+      <div class="bg-cream-50 rounded-3xl p-6 sm:p-10 border border-cream-200 shadow-sm">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+          <div>
+            <span class="text-xs font-bold text-brand-800 uppercase tracking-widest bg-cream-200 px-3 py-1 rounded-full border border-cream-300">
+              TRADISI & SANAD KEILMUAN
+            </span>
+            <h2 class="text-2xl font-extrabold text-brand-950 mt-2">Masyayikh & Kehidupan Pesantren Al-Ittihad</h2>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1 max-w-2xl">
+              Sanad keilmuan yang bersambung dengan para ulama salaf, membina karakter santri dengan keteladanan akhlak dan keikhlasan.
+            </p>
+          </div>
+          <a href="galeri.html" class="inline-flex items-center gap-2 text-brand-700 font-bold hover:text-brand-900 text-xs sm:text-sm">
+            Lihat Semua Foto Galeri <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="relative rounded-2xl overflow-hidden shadow-md h-64 group border border-cream-200">
+            <img src="assets/images/foto-haul-kh-nawawi.jpg" alt="Haul Akbar KH. Nawawi Ramli" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-950/90 via-brand-950/20 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <span class="text-[10px] uppercase font-bold text-gold-400 tracking-wider">Tradisi Pesantren</span>
+              <h3 class="text-base font-bold">Haul Akbar KH. Nawawi Romli & Masyayikh</h3>
+              <p class="text-xs text-cream-200 mt-1">Majelis dzikir dan tahlil akbar bersama ribuan jamaah, alumni, dan santri Ponpes Al-Ittihad.</p>
+            </div>
+          </div>
+
+          <div class="relative rounded-2xl overflow-hidden shadow-md h-64 group border border-cream-200">
+            <img src="assets/images/foto-wisuda-santri.jpg" alt="Haflah Wisuda Santri Al-Ittihad" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-950/90 via-brand-950/20 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <span class="text-[10px] uppercase font-bold text-gold-400 tracking-wider">Pencapaian Santri</span>
+              <h3 class="text-base font-bold">Haflah Khotmil Qur'an & Wisuda Santri</h3>
+              <p class="text-xs text-cream-200 mt-1">Pengukuhan para santri penghafal Al-Qur'an dan kelulusan santri jenjang madrasah.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- TABEL IDENTITAS RESMI SATUAN PENDIDIKAN -->
       <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm">
         <div class="border-b border-slate-100 pb-4 mb-6">
-          <span class="text-xs font-bold text-emerald-700 uppercase tracking-widest">DATA REFERENSI NASIONAL</span>
+          <span class="text-xs font-bold text-brand-800 uppercase tracking-widest">DATA REFERENSI NASIONAL</span>
           <h2 class="text-2xl font-extrabold text-brand-900 mt-1">Identitas Legalitas Satuan Pendidikan</h2>
           <p class="text-xs text-slate-500">
             Data resmi yang terdaftar pada Pusat Data dan Teknologi Informasi (Pusdatin) Kementerian Pendidikan Dasar & Menengah serta Kementerian Agama RI.
@@ -259,7 +335,7 @@
               </tr>
               <tr class="hover:bg-slate-50">
                 <td class="py-3 px-4 font-semibold text-slate-500">Nomor Pokok Sekolah Nasional (NPSN)</td>
-                <td class="py-3 px-4 font-bold text-emerald-700 font-mono">
+                <td class="py-3 px-4 font-bold text-brand-800 font-mono">
                   <a href="https://referensi.data.kemendikdasmen.go.id/pendidikan/npsn/20584241" target="_blank" rel="noopener noreferrer" class="hover:underline flex items-center gap-1.5">
                     20584241 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
                   </a>
@@ -316,10 +392,11 @@
         <p>&copy; 2026 MA Al-Ittihad Tawangsari Trowulan Mojokerto. NPSN: 20584241.</p>
       </div>
       <div class="flex gap-4">
-        <a href="index.html" class="hover:text-emerald-400">Beranda</a>
-        <a href="akademik.html" class="hover:text-emerald-400">Akademik</a>
-        <a href="ppdb.html" class="hover:text-emerald-400">PPDB Online</a>
-        <a href="kontak.html" class="hover:text-emerald-400">Kontak</a>
+        <a href="index.html" class="hover:text-gold-400">Beranda</a>
+        <a href="akademik.html" class="hover:text-gold-400">Akademik</a>
+        <a href="ppdb.html" class="hover:text-gold-400">PPDB Online</a>
+        <a href="kontak.html" class="hover:text-gold-400">Kontak</a>
+        <a href="admin.html" class="hover:text-amber-400 font-semibold"><i class="fa-solid fa-lock text-[10px] mr-1"></i>Portal Admin</a>
       </div>
     </div>
   </footer>

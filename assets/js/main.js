@@ -1,4 +1,4 @@
-/**
+﻿/**
  * MA AL-ITTIHAD TAWANGSARI - JAVASCRIPT CONTROLLER
  * NPSN: 20584241 | Trowulan - Mojokerto
  */
@@ -122,7 +122,14 @@ function initScrollTop() {
 /* ==========================================================================
    4. PPDB ONLINE HANDLER & WHATSAPP GENERATOR
    ========================================================================== */
-const OFFICIAL_WA_NUMBER = '6285706666126'; // Admin MA Al-Ittihad Tawangsari
+function getOfficialWaNumber() {
+  try {
+    const cfg = JSON.parse(localStorage.getItem('ma_site_config') || '{}');
+    return (cfg.waNumber || '6285706666126').replace(/[^0-9]/g, '');
+  } catch (e) {
+    return '6285706666126';
+  }
+}
 
 function initPpdbForm() {
   const form = document.getElementById('ppdbOnlineForm');
@@ -172,14 +179,15 @@ function initPpdbForm() {
       sistemTinggal,
       namaWali,
       noHp,
-      alamat
+      alamat,
+      status: 'Pending'
     };
 
     // Save to localStorage
     try {
       localStorage.setItem('ma_alittihad_last_reg', JSON.stringify(regData));
       const history = JSON.parse(localStorage.getItem('ma_alittihad_all_reg') || '[]');
-      history.push(regData);
+      history.unshift(regData);
       localStorage.setItem('ma_alittihad_all_reg', JSON.stringify(history));
     } catch (err) {
       console.warn('LocalStorage error:', err);
@@ -216,7 +224,7 @@ NPSN: 20584241 | Kab. Mojokerto
 ---------------------------------------
 _Assalamu'alaikum Wr. Wb. Panitia PPDB MA Al-Ittihad Tawangsari, saya telah mengisi formulir online dan ingin mengonfirmasi pendaftaran saya. Mohon informasi tahapan selanjutnya. Terima kasih._`;
 
-    const encodedWaUrl = `https://wa.me/${OFFICIAL_WA_NUMBER}?text=${encodeURIComponent(waText)}`;
+    const encodedWaUrl = `https://wa.me/${getOfficialWaNumber()}?text=${encodeURIComponent(waText)}`;
 
     // Show confirmation modal
     showRegistrationModal(regData, encodedWaUrl);
@@ -233,18 +241,18 @@ function showRegistrationModal(data, waUrl) {
   }
 
   modal.innerHTML = `
-    <div class="bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-emerald-100 max-h-[90vh] overflow-y-auto">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-cream-200 max-h-[90vh] overflow-y-auto">
       <div class="text-center">
-        <div class="w-16 h-16 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl shadow-inner">
+        <div class="w-16 h-16 bg-cream-200 text-brand-800 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl shadow-inner">
           <i class="fa-solid fa-circle-check text-3xl"></i>
         </div>
         <h3 class="text-2xl font-bold text-gray-900 mb-1">Pendaftaran Berhasil Dicatat!</h3>
         <p class="text-sm text-gray-600 mb-4">Terima kasih telah memilih MA Al-Ittihad Tawangsari.</p>
         
-        <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-5 text-left text-sm">
-          <div class="flex justify-between items-center mb-2 pb-2 border-b border-emerald-200/60">
-            <span class="text-emerald-800 font-medium">No. Registrasi:</span>
-            <span class="font-mono font-bold text-emerald-900 bg-white px-2 py-0.5 rounded border border-emerald-300">${data.regCode}</span>
+        <div class="bg-cream-100 border border-cream-300 rounded-xl p-4 mb-5 text-left text-sm">
+          <div class="flex justify-between items-center mb-2 pb-2 border-b border-cream-300/60">
+            <span class="text-brand-900 font-medium">No. Registrasi:</span>
+            <span class="font-mono font-bold text-brand-950 bg-white px-2 py-0.5 rounded border border-cream-400">${data.regCode}</span>
           </div>
           <div class="grid grid-cols-3 gap-1 text-gray-700">
             <span class="text-gray-500">Nama:</span>
@@ -252,7 +260,7 @@ function showRegistrationModal(data, waUrl) {
             <span class="text-gray-500">Asal:</span>
             <span class="col-span-2">${data.asalSekolah}</span>
             <span class="text-gray-500">Jalur:</span>
-            <span class="col-span-2 text-emerald-700 font-semibold">${data.jalur} (${data.peminatan})</span>
+            <span class="col-span-2 text-brand-800 font-semibold">${data.jalur} (${data.peminatan})</span>
             <span class="text-gray-500">Status:</span>
             <span class="col-span-2">${data.sistemTinggal}</span>
           </div>
@@ -265,7 +273,7 @@ function showRegistrationModal(data, waUrl) {
 
         <div class="flex flex-col gap-2.5">
           <a href="${waUrl}" target="_blank" rel="noopener noreferrer" 
-             class="w-full inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-6 rounded-xl shadow-lg shadow-emerald-600/30 transition transform hover:-translate-y-0.5">
+             class="w-full inline-flex items-center justify-center gap-2 bg-brand-800 hover:bg-brand-900 text-white font-semibold py-3 px-6 rounded-xl shadow-lg shadow-brand-900/30 transition transform hover:-translate-y-0.5">
             <i class="fa-brands fa-whatsapp text-xl"></i>
             Kirim Konfirmasi ke WhatsApp Admin
           </a>
@@ -433,10 +441,10 @@ function initTabFilters() {
 
       // Update button state
       filterBtns.forEach(b => {
-        b.classList.remove('active', 'bg-emerald-700', 'text-white');
+        b.classList.remove('active', 'bg-brand-900', 'text-white');
         b.classList.add('bg-white', 'text-gray-700');
       });
-      btn.classList.add('active', 'bg-emerald-700', 'text-white');
+      btn.classList.add('active', 'bg-brand-900', 'text-white');
       btn.classList.remove('bg-white', 'text-gray-700');
 
       // Filter items
@@ -474,6 +482,45 @@ window.openQuickWa = function(topic = 'tanya') {
     default:
       message += `Informasi umum seputar MA Al-Ittihad Tawangsari.`;
   }
-  const url = `https://wa.me/${OFFICIAL_WA_NUMBER}?text=${encodeURIComponent(message)}`;
+  const url = `https://wa.me/${getOfficialWaNumber()}?text=${encodeURIComponent(message)}`;
   window.open(url, '_blank');
 };
+
+/* ==========================================================================
+   9. DYNAMIC DATA HYDRATION (Sync with Admin CMS)
+   ========================================================================== */
+function syncDynamicSiteData() {
+  try {
+    const cfg = JSON.parse(localStorage.getItem('ma_site_config') || 'null');
+    if (cfg && cfg.waNumber) {
+      const cleanWa = cfg.waNumber.replace(/[^0-9]/g, '');
+      // Update any direct WhatsApp links
+      document.querySelectorAll('a[href*="wa.me"]').forEach(a => {
+        const oldHref = a.getAttribute('href');
+        if (oldHref.includes('wa.me/')) {
+          a.setAttribute('href', oldHref.replace(/wa\.me\/[0-9]+/, `wa.me/${cleanWa}`));
+        }
+      });
+      // Update text phone displays if present
+      document.querySelectorAll('.site-phone-display').forEach(el => {
+        el.textContent = cfg.waNumber;
+      });
+    }
+
+    if (cfg && cfg.email) {
+      document.querySelectorAll('a[href^="mailto:"]').forEach(a => {
+        a.setAttribute('href', `mailto:${cfg.email}`);
+      });
+      document.querySelectorAll('.site-email-display').forEach(el => {
+        el.textContent = cfg.email;
+      });
+    }
+  } catch (err) {
+    console.warn('Sync site error:', err);
+  }
+}
+
+// Attach sync to DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+  syncDynamicSiteData();
+});

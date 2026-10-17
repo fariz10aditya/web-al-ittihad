@@ -1,0 +1,1029 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard & CMS | MA Al-Ittihad Tawangsari</title>
+  <meta name="robots" content="noindex, nofollow">
+  
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e3a8a',
+              900: '#172554',
+              950: '#0f172a',
+            },
+            cream: {
+              50: '#fdfbf7',
+              100: '#fbf7ee',
+              200: '#f5eedb',
+              300: '#eddcc0',
+              400: '#e0c69e',
+              500: '#cfa86e',
+              600: '#b5894b',
+              700: '#8c642c',
+              800: '#6b4a1f',
+              900: '#422c10',
+            },
+            gold: {
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            arabic: ['"Amiri"', 'serif'],
+          }
+        }
+      }
+    }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-slate-100 text-slate-800 antialiased font-sans">
+
+  <!-- ========================================================
+       1. LOGIN GATEWAY SCREEN
+       ======================================================== -->
+  <section id="loginSection" class="min-h-screen flex items-center justify-center p-4 bg-pattern-dark relative">
+    <div class="max-w-md w-full bg-white rounded-3xl p-8 shadow-2xl border border-slate-200 relative z-10">
+      
+      <div class="text-center mb-6">
+        <img src="assets/images/logo.svg" alt="Logo MA Al-Ittihad" class="w-16 h-16 mx-auto mb-3">
+        <span class="text-[10px] font-extrabold uppercase tracking-widest text-brand-900 bg-cream-100 px-2.5 py-1 rounded-md border border-cream-300">
+          CONTROL CENTER & CMS
+        </span>
+        <h1 class="text-xl font-black text-brand-900 mt-2">MA Al-Ittihad Tawangsari</h1>
+        <p class="text-xs text-slate-500">Panel Pengelolaan Konten & Data PPDB Madrasah</p>
+      </div>
+
+      <form id="loginForm" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Username</label>
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+              <i class="fa-solid fa-user text-xs"></i>
+            </span>
+            <input type="text" id="loginUser" required value="admin" 
+                   class="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Password</label>
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+              <i class="fa-solid fa-lock text-xs"></i>
+            </span>
+            <input type="password" id="loginPass" required value="alittihad2026" 
+                   class="w-full pl-9 pr-10 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+            <button type="button" onclick="togglePassVisibility('loginPass')" class="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600">
+              <i class="fa-solid fa-eye text-xs"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="p-3 bg-cream-100 rounded-xl border border-cream-300 text-[11px] text-brand-950 leading-relaxed">
+          <i class="fa-solid fa-circle-info text-brand-700 mr-1"></i>
+          <strong>Akun Bawaan:</strong><br>
+          User: <code class="font-bold text-brand-900">admin</code> • Password: <code class="font-bold text-brand-900">alittihad2026</code>
+        </div>
+
+        <button type="submit" class="w-full bg-brand-800 hover:bg-brand-900 text-white font-bold py-3 rounded-xl text-sm shadow-lg shadow-brand-900/25 transition transform hover:-translate-y-0.5">
+          <i class="fa-solid fa-right-to-bracket mr-1"></i> Masuk ke Panel Admin
+        </button>
+
+        <div class="text-center pt-2">
+          <a href="index.html" class="text-xs text-slate-500 hover:text-brand-800">
+            <i class="fa-solid fa-arrow-left text-[10px] mr-1"></i> Kembali ke Halaman Web
+          </a>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
+       2. MAIN ADMIN DASHBOARD PANEL
+       ======================================================== -->
+  <div id="adminPanel" class="hidden min-h-screen flex flex-col lg:flex-row">
+    
+    <!-- SIDEBAR -->
+    <aside id="adminSidebar" class="w-full lg:w-64 bg-brand-900 text-slate-300 flex flex-col shrink-0 border-r border-brand-800">
+      
+      <!-- Brand Head -->
+      <div class="p-5 border-b border-white/10 flex items-center justify-between">
+        <a href="index.html" target="_blank" class="flex items-center gap-3">
+          <img src="assets/images/logo.svg" alt="Logo MA Al-Ittihad" class="w-10 h-10">
+          <div>
+            <span class="text-[9px] uppercase font-bold text-gold-400 block tracking-wider">PANEL KENDALI</span>
+            <strong class="text-white text-sm leading-none block">MA AL-ITTIHAD</strong>
+            <span class="text-[10px] text-cream-300">Tawangsari Trowulan</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="flex-1 p-4 space-y-1 overflow-y-auto text-xs">
+        <button onclick="switchTab('dashboard')" class="admin-nav-btn active w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-semibold transition" data-tab="dashboard">
+          <i class="fa-solid fa-chart-pie w-4 text-gold-400"></i> Dashboard
+        </button>
+
+        <button onclick="switchTab('ppdb')" class="admin-nav-btn w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl font-semibold transition" data-tab="ppdb">
+          <span class="flex items-center gap-3">
+            <i class="fa-solid fa-users w-4 text-gold-400"></i> Pendaftar PPDB
+          </span>
+          <span id="badgePpdbCount" class="bg-amber-500 text-brand-900 text-[10px] font-bold px-2 py-0.5 rounded-full">0</span>
+        </button>
+
+        <button onclick="switchTab('profil')" class="admin-nav-btn w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-semibold transition" data-tab="profil">
+          <i class="fa-solid fa-school w-4 text-gold-400"></i> Profil & Visi Misi
+        </button>
+
+        <button onclick="switchTab('kontak')" class="admin-nav-btn w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-semibold transition" data-tab="kontak">
+          <i class="fa-solid fa-address-book w-4 text-gold-400"></i> Kontak & Peta
+        </button>
+
+        <button onclick="switchTab('berita')" class="admin-nav-btn w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-semibold transition" data-tab="berita">
+          <i class="fa-solid fa-newspaper w-4 text-gold-400"></i> Berita & Prestasi
+        </button>
+
+        <button onclick="switchTab('ekskul')" class="admin-nav-btn w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-semibold transition" data-tab="ekskul">
+          <i class="fa-solid fa-trophy w-4 text-gold-400"></i> Ekstrakurikuler
+        </button>
+
+        <button onclick="switchTab('faqs')" class="admin-nav-btn w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-semibold transition" data-tab="faqs">
+          <i class="fa-solid fa-circle-question w-4 text-gold-400"></i> FAQ / Tanya Jawab
+        </button>
+
+        <button onclick="switchTab('backup')" class="admin-nav-btn w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-semibold transition" data-tab="backup">
+          <i class="fa-solid fa-database w-4 text-gold-400"></i> Backup & Restore
+        </button>
+      </nav>
+
+      <!-- User footer -->
+      <div class="p-4 border-t border-white/10 bg-black/20 text-xs space-y-2">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-brand-700 text-white flex items-center justify-center font-bold">
+            A
+          </div>
+          <div>
+            <div class="font-bold text-white leading-tight">Admin Madrasah</div>
+            <span class="text-[10px] text-cream-300">Alfiyatus S. (Operator)</span>
+          </div>
+        </div>
+        
+        <div class="flex gap-2 pt-2">
+          <button onclick="openChangePassModal()" class="flex-1 text-center py-1.5 px-2 bg-white/10 hover:bg-white/20 rounded-lg text-[10px] text-white">
+            <i class="fa-solid fa-key mr-1"></i> Ganti Sandi
+          </button>
+          <button onclick="window.AdminCMS.logout()" class="py-1.5 px-3 bg-red-600/80 hover:bg-red-600 rounded-lg text-[10px] text-white font-bold">
+            <i class="fa-solid fa-power-off"></i>
+          </button>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT BODY -->
+    <main class="flex-1 flex flex-col min-w-0 bg-slate-100 overflow-y-auto">
+      
+      <!-- TOPBAR -->
+      <header class="bg-white border-b border-slate-200 px-6 py-3.5 flex items-center justify-between sticky top-0 z-30 shadow-sm">
+        <div class="flex items-center gap-3">
+          <h2 id="pageTitle" class="text-base font-extrabold text-slate-800">Ringkasan Sistem</h2>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="index.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-cream-100 text-brand-800 border border-cream-300 hover:bg-cream-200 transition">
+            <i class="fa-solid fa-globe"></i>
+            <span>Buka Web Utama</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+          </a>
+        </div>
+      </header>
+
+      <!-- CONTENT PANES -->
+      <div class="p-6 space-y-6">
+
+        <!-- ==============================================
+             PANE 1: DASHBOARD OVERVIEW
+             ============================================== -->
+        <div id="pane-dashboard" class="admin-pane space-y-6">
+          
+          <!-- 4 Stat Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+              <div>
+                <span class="text-xs text-slate-500 font-bold uppercase block">Pendaftar PPDB</span>
+                <span id="statTotalPpdb" class="text-3xl font-black text-brand-900 mt-1 block">0</span>
+                <span class="text-[11px] text-brand-700">Total formulir masuk</span>
+              </div>
+              <div class="w-12 h-12 rounded-xl bg-cream-200 text-brand-900 flex items-center justify-center text-xl">
+                <i class="fa-solid fa-user-graduate"></i>
+              </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+              <div>
+                <span class="text-xs text-slate-500 font-bold uppercase block">Terverifikasi</span>
+                <span id="statVerifiedPpdb" class="text-3xl font-black text-blue-700 mt-1 block">0</span>
+                <span class="text-[11px] text-slate-500">Berkas lengkap</span>
+              </div>
+              <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-800 flex items-center justify-center text-xl">
+                <i class="fa-solid fa-user-check"></i>
+              </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+              <div>
+                <span class="text-xs text-slate-500 font-bold uppercase block">Menunggu (Pending)</span>
+                <span id="statPendingPpdb" class="text-3xl font-black text-amber-600 mt-1 block">0</span>
+                <span class="text-[11px] text-slate-500">Perlu konfirmasi</span>
+              </div>
+              <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center text-xl">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+              <div>
+                <span class="text-xs text-slate-500 font-bold uppercase block">Warta / Prestasi</span>
+                <span id="statTotalNews" class="text-3xl font-black text-slate-800 mt-1 block">0</span>
+                <span class="text-[11px] text-slate-500">Artikel aktif terbit</span>
+              </div>
+              <div class="w-12 h-12 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center text-xl">
+                <i class="fa-solid fa-newspaper"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Action Banner -->
+          <div class="bg-gradient-to-r from-brand-900 to-brand-900 text-white rounded-3xl p-6 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>
+              <span class="text-xs text-gold-400 font-extrabold uppercase tracking-wider">STATUS SISTEM</span>
+              <h3 class="text-lg font-bold mt-0.5">Sistem Madrasah Online Aktif & Terkoneksi</h3>
+              <p class="text-xs text-cream-200 mt-1">NPSN: 20584241 • Akreditasi: B • WhatsApp Panitia Terhubung: 0857-0666-6126</p>
+            </div>
+            <div class="flex gap-2">
+              <button onclick="switchTab('ppdb')" class="px-4 py-2 bg-amber-500 hover:bg-amber-600 text-brand-900 rounded-xl text-xs font-bold transition">
+                <i class="fa-solid fa-list-check mr-1"></i> Kelola Pendaftar PPDB
+              </button>
+              <button onclick="openAddNewsModal()" class="px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-xl text-xs font-bold transition">
+                <i class="fa-solid fa-plus mr-1"></i> Tulis Berita Baru
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ==============================================
+             PANE 2: PENDAFTAR PPDB ONLINE
+             ============================================== -->
+        <div id="pane-ppdb" class="admin-pane hidden space-y-4">
+          
+          <div class="bg-white p-4 rounded-2xl border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-sm">
+            <div class="flex items-center gap-2 w-full sm:w-auto">
+              <!-- Search box -->
+              <div class="relative flex-1 sm:w-64">
+                <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400 text-xs">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+                <input type="text" id="ppdbSearchInput" oninput="filterPpdbList()" placeholder="Cari nama, NISN, atau sekolah..." 
+                       class="w-full pl-8 pr-3 py-1.5 text-xs rounded-xl border border-slate-300 outline-none focus:ring-1 focus:ring-brand-500">
+              </div>
+
+              <!-- Filter status -->
+              <select id="ppdbStatusFilter" onchange="filterPpdbList()" class="text-xs py-1.5 px-3 rounded-xl border border-slate-300 outline-none bg-white font-medium">
+                <option value="all">Semua Status</option>
+                <option value="Pending">⏳ Pending</option>
+                <option value="Terverifikasi">🔍 Terverifikasi</option>
+                <option value="Diterima">✅ Diterima</option>
+                <option value="Ditolak">❌ Ditolak</option>
+              </select>
+            </div>
+
+            <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+              <button onclick="openAddPpdbModal()" class="px-3.5 py-1.5 bg-brand-800 hover:bg-brand-900 text-white text-xs font-bold rounded-xl shadow transition">
+                <i class="fa-solid fa-user-plus mr-1"></i> Tambah Manual
+              </button>
+              <button onclick="window.AdminCMS.exportPpdbCsv()" class="px-3.5 py-1.5 bg-slate-800 hover:bg-slate-900 text-white text-xs font-bold rounded-xl shadow transition">
+                <i class="fa-solid fa-file-excel mr-1"></i> Download Excel / CSV
+              </button>
+            </div>
+          </div>
+
+          <!-- Table Container -->
+          <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+                <thead class="bg-slate-50 border-b border-slate-200 text-[11px] text-slate-500 uppercase tracking-wider font-bold">
+                  <tr>
+                    <th class="py-3 px-3">No. Reg & Tanggal</th>
+                    <th class="py-3 px-3">Nama Siswa</th>
+                    <th class="py-3 px-3">Asal Sekolah</th>
+                    <th class="py-3 px-3">Jurusan / Jalur</th>
+                    <th class="py-3 px-3">Status Asrama</th>
+                    <th class="py-3 px-3">Wali & Kontak</th>
+                    <th class="py-3 px-3">Status</th>
+                    <th class="py-3 px-3 text-right">Aksi</th>
+                  </tr>
+                </thead>
+                <tbody id="ppdbTableBody" class="divide-y divide-slate-100">
+                  <!-- Populated via admin.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ==============================================
+             PANE 3: PROFIL & IDENTITAS MADRASAH
+             ============================================== -->
+        <div id="pane-profil" class="admin-pane hidden space-y-4">
+          
+          <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
+            <div class="border-b border-slate-100 pb-4 mb-6 flex justify-between items-center">
+              <div>
+                <h3 class="font-bold text-base text-slate-900">Kelola Identitas & Profil Madrasah</h3>
+                <p class="text-xs text-slate-500">Perubahan data di sini akan otomatis tampil di halaman utama website.</p>
+              </div>
+              <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-300">
+                Terakreditasi B
+              </span>
+            </div>
+
+            <form id="profileConfigForm" onsubmit="handleSaveProfile(event)" class="space-y-4 text-xs">
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block font-bold text-slate-700 uppercase mb-1">Nama Resmi (Sesuai Kemenag)</label>
+                  <input type="text" name="namaMadrasah" required class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none focus:ring-1 focus:ring-brand-500">
+                </div>
+                <div>
+                  <label class="block font-bold text-slate-700 uppercase mb-1">Nama Lengkap Satuan Pendidikan</label>
+                  <input type="text" name="namaLengkap" required class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none focus:ring-1 focus:ring-brand-500">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div>
+                  <label class="block font-bold text-slate-700 uppercase mb-1">NPSN</label>
+                  <input type="text" name="npsn" required class="w-full px-3 py-2 rounded-xl border border-slate-300 font-mono outline-none">
+                </div>
+                <div>
+                  <label class="block font-bold text-slate-700 uppercase mb-1">Status Akreditasi</label>
+                  <input type="text" name="akreditasi" required class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none">
+                </div>
+                <div>
+                  <label class="block font-bold text-slate-700 uppercase mb-1">Nomor SK Izin Operasional</label>
+                  <input type="text" name="skOperasional" required class="w-full px-3 py-2 rounded-xl border border-slate-300 font-mono outline-none">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block font-bold text-slate-700 uppercase mb-1">Tahun Berdiri MA & Pendiri</label>
+                  <div class="flex gap-2">
+                    <input type="text" name="tahunBerdiriMA" placeholder="2000" class="w-24 px-3 py-2 rounded-xl border border-slate-300 outline-none">
+                    <input type="text" name="pendiriMA" placeholder="KH. Albazi Nawawi" class="flex-1 px-3 py-2 rounded-xl border border-slate-300 outline-none">
+                  </div>
+                </div>
+                <div>
+                  <label class="block font-bold text-slate-700 uppercase mb-1">Lembaga Naungan</label>
+                  <input type="text" value="YPIS & Pondok Pesantren Al-Ittihad" readonly class="w-full px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 text-slate-500">
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-bold text-slate-700 uppercase mb-1">Kata Sambutan Ringkas</label>
+                <textarea name="sambutan" rows="3" class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none"></textarea>
+              </div>
+
+              <div>
+                <label class="block font-bold text-slate-700 uppercase mb-1">Visi Madrasah</label>
+                <textarea name="visi" rows="2" class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none font-medium"></textarea>
+              </div>
+
+              <div>
+                <label class="block font-bold text-slate-700 uppercase mb-1">Misi Madrasah (1 butir per baris)</label>
+                <textarea name="misi" rows="4" class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none leading-relaxed"></textarea>
+              </div>
+
+              <div class="pt-2">
+                <button type="submit" class="bg-brand-800 hover:bg-brand-900 text-white font-bold py-2.5 px-6 rounded-xl shadow transition">
+                  <i class="fa-solid fa-floppy-disk mr-1"></i> Simpan Perubahan Profil
+                </button>
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+
+        <!-- ==============================================
+             PANE 4: KONTAK & LOKASI
+             ============================================== -->
+        <div id="pane-kontak" class="admin-pane hidden space-y-4">
+          
+          <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
+            <div class="border-b border-slate-100 pb-4 mb-6">
+              <h3 class="font-bold text-base text-slate-900">Kelola Nomor Kontak & Titik Lokasi Peta</h3>
+              <p class="text-xs text-slate-500">Nomor WhatsApp ini menjadi tujuan pengiriman formulir PPDB online langsung dari website.</p>
+            </div>
+
+            <form id="contactConfigForm" onsubmit="handleSaveContact(event)" class="space-y-4 text-xs">
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block font-bold text-slate-700 uppercase mb-1">
+                    Nomor WhatsApp Resmi (Tujuan Chat & PPDB)
+                  </label>
+                  <input type="text" name="waNumber" required placeholder="085706666126" class="w-full px-3 py-2 rounded-xl border border-slate-300 font-mono outline-none">
+                  <span class="text-[10px] text-slate-400 mt-0.5 block">Format: 0857... atau 62857...</span>
+                </div>
+                <div>
+                  <label class="block font-bold text-slate-700 uppercase mb-1">Email Resmi Madrasah</label>
+                  <input type="email" name="email" required placeholder="maalit2000@gmail.com" class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none">
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-bold text-slate-700 uppercase mb-1">Alamat Lengkap Madrasah</label>
+                <textarea name="alamat" rows="2" class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none"></textarea>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block font-bold text-slate-700 uppercase mb-1">Jam Operasional Layanan Kantor</label>
+                  <input type="text" name="jamOperasional" placeholder="Sabtu - Kamis: 07.30 - 14.30 WIB" class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none">
+                </div>
+                <div>
+                  <label class="block font-bold text-slate-700 uppercase mb-1">Link Google Maps (Shortlink / URL)</label>
+                  <input type="text" name="mapsLink" placeholder="https://maps.app.goo.gl/MxdgsESSReQPp4oW8" class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none">
+                </div>
+              </div>
+
+              <div class="pt-2">
+                <button type="submit" class="bg-brand-800 hover:bg-brand-900 text-white font-bold py-2.5 px-6 rounded-xl shadow transition">
+                  <i class="fa-solid fa-floppy-disk mr-1"></i> Simpan Kontak & Lokasi
+                </button>
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+
+        <!-- ==============================================
+             PANE 5: BERITA & PRESTASI
+             ============================================== -->
+        <div id="pane-berita" class="admin-pane hidden space-y-4">
+          
+          <div class="bg-white p-4 rounded-2xl border border-slate-200 flex justify-between items-center shadow-sm">
+            <div>
+              <h3 class="font-bold text-sm text-slate-900">Daftar Berita, Agenda & Prestasi Terbit</h3>
+              <p class="text-xs text-slate-500">Kelola artikel kegiatan yang tampil di halaman beranda dan halaman berita.</p>
+            </div>
+            <button onclick="openAddNewsModal()" class="px-4 py-2 bg-brand-800 hover:bg-brand-900 text-white text-xs font-bold rounded-xl shadow transition">
+              <i class="fa-solid fa-plus mr-1"></i> Tulis Berita Baru
+            </button>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+                <thead class="bg-slate-50 border-b border-slate-200 text-[11px] text-slate-500 uppercase tracking-wider font-bold">
+                  <tr>
+                    <th class="py-3 px-3">Tanggal</th>
+                    <th class="py-3 px-3">Judul Berita</th>
+                    <th class="py-3 px-3">Kategori</th>
+                    <th class="py-3 px-3">Penulis</th>
+                    <th class="py-3 px-3 text-right">Aksi</th>
+                  </tr>
+                </thead>
+                <tbody id="newsTableBody" class="divide-y divide-slate-100">
+                  <!-- Populated via admin.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ==============================================
+             PANE 6: EKSTRAKURIKULER
+             ============================================== -->
+        <div id="pane-ekskul" class="admin-pane hidden space-y-4">
+          
+          <!-- Add Ekskul Form -->
+          <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+            <h3 class="font-bold text-sm text-slate-900 mb-3">+ Tambah Ekstrakurikuler Baru</h3>
+            <form onsubmit="handleAddEkskul(event)" class="grid grid-cols-1 sm:grid-cols-4 gap-3 text-xs">
+              <input type="text" name="name" required placeholder="Nama Ekstrakurikuler" class="px-3 py-2 rounded-xl border border-slate-300 outline-none">
+              <select name="category" required class="px-3 py-2 rounded-xl border border-slate-300 outline-none bg-white">
+                <option value="Keagamaan">Keagamaan</option>
+                <option value="Organisasi">Kepemimpinan / Organisasi</option>
+                <option value="Seni">Seni & Budaya</option>
+                <option value="Olahraga">Olahraga</option>
+                <option value="Vokasi">Vokasi / Keterampilan</option>
+              </select>
+              <input type="text" name="schedule" placeholder="Jadwal (Contoh: Sabtu sore)" class="px-3 py-2 rounded-xl border border-slate-300 outline-none">
+              <button type="submit" class="bg-brand-800 hover:bg-brand-900 text-white font-bold py-2 rounded-xl shadow transition">
+                Simpan Ekskul
+              </button>
+            </form>
+          </div>
+
+          <!-- Table Ekskul -->
+          <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+                <thead class="bg-slate-50 border-b border-slate-200 text-[11px] text-slate-500 uppercase tracking-wider font-bold">
+                  <tr>
+                    <th class="py-3 px-3">Nama Kegiatan</th>
+                    <th class="py-3 px-3">Kategori</th>
+                    <th class="py-3 px-3">Jadwal Latihan</th>
+                    <th class="py-3 px-3">Keterangan</th>
+                    <th class="py-3 px-3 text-right">Aksi</th>
+                  </tr>
+                </thead>
+                <tbody id="ekskulTableBody" class="divide-y divide-slate-100">
+                  <!-- Populated via admin.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ==============================================
+             PANE 7: FAQ (TANYA JAWAB)
+             ============================================== -->
+        <div id="pane-faqs" class="admin-pane hidden space-y-4">
+          
+          <!-- Add FAQ Form -->
+          <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+            <h3 class="font-bold text-sm text-slate-900 mb-3">+ Tambah Pertanyaan FAQ Baru</h3>
+            <form onsubmit="handleAddFaq(event)" class="space-y-3 text-xs">
+              <input type="text" name="q" required placeholder="Pertanyaan (Contoh: Apakah ada beasiswa untuk anak yatim?)" 
+                     class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none">
+              <textarea name="a" required rows="2" placeholder="Jawaban penjelasan..." 
+                        class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none"></textarea>
+              <button type="submit" class="bg-brand-800 hover:bg-brand-900 text-white font-bold py-2 px-4 rounded-xl shadow transition">
+                Simpan FAQ
+              </button>
+            </form>
+          </div>
+
+          <!-- Table FAQ -->
+          <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+                <thead class="bg-slate-50 border-b border-slate-200 text-[11px] text-slate-500 uppercase tracking-wider font-bold">
+                  <tr>
+                    <th class="py-3 px-3 w-1/3">Pertanyaan</th>
+                    <th class="py-3 px-3">Jawaban</th>
+                    <th class="py-3 px-3 text-right w-20">Aksi</th>
+                  </tr>
+                </thead>
+                <tbody id="faqTableBody" class="divide-y divide-slate-100">
+                  <!-- Populated via admin.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ==============================================
+             PANE 8: BACKUP & RESTORE DATA
+             ============================================== -->
+        <div id="pane-backup" class="admin-pane hidden space-y-4">
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- Download Backup -->
+            <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-3">
+              <div class="w-12 h-12 rounded-2xl bg-cream-200 text-brand-900 flex items-center justify-center text-xl">
+                <i class="fa-solid fa-file-arrow-down"></i>
+              </div>
+              <h3 class="font-bold text-base text-slate-900">Download Cadangan Data (Backup)</h3>
+              <p class="text-xs text-slate-500 leading-relaxed">
+                Simpan seluruh konfigurasi identitas madrasah, daftar pendaftar PPDB, berita, dan kegiatan ke dalam satu file berkas <code>.json</code> yang aman.
+              </p>
+              <div class="pt-2">
+                <button onclick="window.AdminCMS.downloadBackupJson()" class="bg-brand-800 hover:bg-brand-900 text-white font-bold py-2.5 px-5 rounded-xl text-xs shadow transition">
+                  <i class="fa-solid fa-download mr-1"></i> Unduh File Backup (.json)
+                </button>
+              </div>
+            </div>
+
+            <!-- Restore Backup -->
+            <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-3">
+              <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-800 flex items-center justify-center text-xl">
+                <i class="fa-solid fa-file-arrow-up"></i>
+              </div>
+              <h3 class="font-bold text-base text-slate-900">Pulihkan Data (Restore)</h3>
+              <p class="text-xs text-slate-500 leading-relaxed">
+                Pindahkan atau pulihkan data dari file cadangan sebelumnya jika Anda berganti komputer atau peramban browser.
+              </p>
+              <div class="pt-2">
+                <input type="file" id="restoreFileInput" accept=".json" class="hidden" onchange="handleRestoreFile(this)">
+                <button onclick="document.getElementById('restoreFileInput').click()" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2.5 px-5 rounded-xl text-xs shadow transition">
+                  <i class="fa-solid fa-upload mr-1"></i> Pilih File Cadangan (.json)
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Reset Section -->
+          <div class="bg-red-50 border border-red-200 rounded-3xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <strong class="text-xs text-red-900 font-bold block uppercase">Zona Pengaturan Sistem</strong>
+              <p class="text-xs text-red-700 mt-0.5">Kembalikan seluruh teks profil dan berita ke data bawaan awal MA Al-Ittihad.</p>
+            </div>
+            <button onclick="window.AdminCMS.resetDefaults()" class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-xs font-bold rounded-xl shadow transition shrink-0">
+              <i class="fa-solid fa-arrow-rotate-left mr-1"></i> Reset ke Pengaturan Standar
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ========================================================
+       MODALS
+       ======================================================== -->
+
+  <!-- Modal Tambah Berita -->
+  <div id="newsModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-4">
+        <h3 id="newsModalTitle" class="font-bold text-base text-slate-900">Tulis Berita / Prestasi Baru</h3>
+        <button onclick="document.getElementById('newsModal').classList.add('hidden')" class="text-slate-400 hover:text-slate-600">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <form onsubmit="handleSaveNews(event)" class="space-y-3 text-xs">
+        <input type="hidden" name="id">
+
+        <div>
+          <label class="block font-bold text-slate-700 uppercase mb-1">Judul Berita <span class="text-red-500">*</span></label>
+          <input type="text" name="title" required placeholder="Judul artikel berita..." class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-700 uppercase mb-1">Kategori</label>
+            <select name="category" class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none bg-white">
+              <option value="Prestasi">Prestasi</option>
+              <option value="Akademik">Akademik</option>
+              <option value="Tahfidz & Diniyah">Tahfidz & Diniyah</option>
+              <option value="Seni & Sastra">Seni & Sastra</option>
+              <option value="Pengumuman">Pengumuman</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 uppercase mb-1">Penulis</label>
+            <input type="text" name="author" placeholder="Humas MA Al-Ittihad" class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none">
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 uppercase mb-1">Ringkasan Singkat (Lead)</label>
+          <textarea name="summary" rows="2" placeholder="1-2 kalimat pengantar..." class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none"></textarea>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 uppercase mb-1">Isi Lengkap Berita</label>
+          <textarea name="content" rows="4" placeholder="Uraian berita lengkap..." class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none"></textarea>
+        </div>
+
+        <div class="pt-2 flex justify-end gap-2">
+          <button type="button" onclick="document.getElementById('newsModal').classList.add('hidden')" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl">
+            Batal
+          </button>
+          <button type="submit" class="px-5 py-2 bg-brand-800 hover:bg-brand-900 text-white font-bold rounded-xl shadow">
+            Simpan Berita
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Tambah Pendaftar Manual Offline -->
+  <div id="addPpdbModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-4">
+        <h3 class="font-bold text-base text-slate-900">Input Pendaftaran Santri Manual (Offline)</h3>
+        <button onclick="document.getElementById('addPpdbModal').classList.add('hidden')" class="text-slate-400 hover:text-slate-600">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <form onsubmit="handleSaveManualPpdb(event)" class="space-y-3 text-xs">
+        <div>
+          <label class="block font-bold text-slate-700 uppercase mb-1">Nama Lengkap Siswa <span class="text-red-500">*</span></label>
+          <input type="text" name="nama" required class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-700 uppercase mb-1">Jenis Kelamin</label>
+            <select name="jenisKelamin" class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none bg-white">
+              <option value="Laki-laki">Laki-laki (Putra)</option>
+              <option value="Perempuan">Perempuan (Putri)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 uppercase mb-1">NISN</label>
+            <input type="number" name="nisn" placeholder="10 digit NISN" class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none">
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 uppercase mb-1">Asal Sekolah MTs / SMP <span class="text-red-500">*</span></label>
+          <input type="text" name="asalSekolah" required class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-700 uppercase mb-1">Pilihan Jurusan</label>
+            <select name="peminatan" class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none bg-white">
+              <option value="MIPA (Matematika & IPA)">MIPA</option>
+              <option value="IPS (Ilmu Pengetahuan Sosial)">IPS</option>
+              <option value="Keagamaan (IIK)">Keagamaan</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 uppercase mb-1">Jalur Masuk</label>
+            <select name="jalur" class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none bg-white">
+              <option value="Reguler">Reguler</option>
+              <option value="Tahfidz Al-Qur'an">Tahfidz</option>
+              <option value="Prestasi">Prestasi</option>
+              <option value="Afirmasi">Afirmasi / Yatim</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 uppercase mb-1">Status Tempat Tinggal</label>
+          <select name="sistemTinggal" class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none bg-white">
+            <option value="Boarding (Asrama Pesantren)">Mondok / Asrama (Boarding)</option>
+            <option value="Non-Boarding (Laju / Pulang Pergi)">Laju / Pulang Pergi (Non-Boarding)</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-700 uppercase mb-1">Nama Orang Tua / Wali <span class="text-red-500">*</span></label>
+            <input type="text" name="namaWali" required class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 uppercase mb-1">No. WhatsApp / HP <span class="text-red-500">*</span></label>
+            <input type="tel" name="noHp" required placeholder="08xxxxxxxxxx" class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none">
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 uppercase mb-1">Alamat Lengkap</label>
+          <textarea name="alamat" rows="2" class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none"></textarea>
+        </div>
+
+        <div class="pt-2 flex justify-end gap-2">
+          <button type="button" onclick="document.getElementById('addPpdbModal').classList.add('hidden')" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl">
+            Batal
+          </button>
+          <button type="submit" class="px-5 py-2 bg-brand-800 hover:bg-brand-900 text-white font-bold rounded-xl shadow">
+            Simpan Pendaftar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Ganti Password -->
+  <div id="changePassModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
+    <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl border border-slate-200">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-4">
+        <h3 class="font-bold text-sm text-slate-900">Ubah Password Admin</h3>
+        <button onclick="document.getElementById('changePassModal').classList.add('hidden')" class="text-slate-400 hover:text-slate-600">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <form onsubmit="handleSavePass(event)" class="space-y-3 text-xs">
+        <div>
+          <label class="block font-bold text-slate-700 uppercase mb-1">Password Lama</label>
+          <input type="password" name="oldPass" required class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none">
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 uppercase mb-1">Password Baru (min. 6 karakter)</label>
+          <input type="password" name="newPass" required class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none">
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 uppercase mb-1">Ulangi Password Baru</label>
+          <input type="password" name="confirmPass" required class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none">
+        </div>
+        <div class="pt-2 flex justify-end gap-2">
+          <button type="button" onclick="document.getElementById('changePassModal').classList.add('hidden')" class="px-3 py-2 bg-slate-100 rounded-xl">Batal</button>
+          <button type="submit" class="px-4 py-2 bg-brand-800 hover:bg-brand-900 text-white font-bold rounded-xl shadow">Simpan Sandi</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- UI SCRIPTS -->
+  <script src="assets/js/admin.js"></script>
+  <script>
+    // Tab Switching Logic
+    function switchTab(tabId) {
+      document.querySelectorAll('.admin-pane').forEach(p => p.classList.add('hidden'));
+      document.querySelectorAll('.admin-nav-btn').forEach(b => {
+        b.classList.remove('active', 'bg-brand-900/80', 'text-white');
+        b.classList.add('text-slate-300');
+      });
+
+      const targetPane = document.getElementById('pane-' + tabId);
+      if (targetPane) targetPane.classList.remove('hidden');
+
+      const targetBtn = document.querySelector(`[data-tab="${tabId}"]`);
+      if (targetBtn) {
+        targetBtn.classList.add('active', 'bg-brand-900/80', 'text-white');
+        targetBtn.classList.remove('text-slate-300');
+      }
+
+      // Update Top Page Title
+      const titles = {
+        dashboard: 'Ringkasan & Statistik Sistem',
+        ppdb: 'Manajemen Data Pendaftar PPDB Online',
+        profil: 'Pengaturan Profil & Legalitas Madrasah',
+        kontak: 'Pengaturan Kontak & Google Maps',
+        berita: 'Manajemen Berita & Pengumuman',
+        ekskul: 'Manajemen Ekstrakurikuler',
+        faqs: 'Manajemen FAQ (Tanya Jawab)',
+        backup: 'Cadangan Data & Pemulihan Sistem'
+      };
+      document.getElementById('pageTitle').textContent = titles[tabId] || 'Panel Kendali';
+
+      // Update badge PPDB count
+      const badge = document.getElementById('badgePpdbCount');
+      if (badge && window.AdminCMS) {
+        badge.textContent = window.AdminCMS.ppdbList.length;
+      }
+    }
+
+    // Toggle Password Visibility
+    function togglePassVisibility(id) {
+      const el = document.getElementById(id);
+      if (el) el.type = el.type === 'password' ? 'text' : 'password';
+    }
+
+    // Login Form Handler
+    document.getElementById('loginForm')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const user = document.getElementById('loginUser').value;
+      const pass = document.getElementById('loginPass').value;
+      window.AdminCMS.login(user, pass);
+    });
+
+    // Form Submissions
+    function handleSaveProfile(e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      window.AdminCMS.saveProfileConfig(formData);
+    }
+
+    function handleSaveContact(e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      window.AdminCMS.saveContactConfig(formData);
+    }
+
+    function handleAddEkskul(e) {
+      e.preventDefault();
+      const f = e.target;
+      window.AdminCMS.addEkskul({
+        name: f.name.value,
+        category: f.category.value,
+        schedule: f.schedule.value,
+        desc: ''
+      });
+      f.reset();
+    }
+
+    function handleAddFaq(e) {
+      e.preventDefault();
+      const f = e.target;
+      window.AdminCMS.addFaq({
+        q: f.q.value,
+        a: f.a.value
+      });
+      f.reset();
+    }
+
+    // News Modal Handlers
+    function openAddNewsModal() {
+      const modal = document.getElementById('newsModal');
+      modal.querySelector('form').reset();
+      modal.querySelector('[name="id"]').value = '';
+      document.getElementById('newsModalTitle').textContent = 'Tulis Berita / Prestasi Baru';
+      modal.classList.remove('hidden');
+    }
+
+    function handleSaveNews(e) {
+      e.preventDefault();
+      const f = e.target;
+      window.AdminCMS.addOrUpdateNews({
+        id: f.id.value || null,
+        title: f.title.value,
+        category: f.category.value,
+        author: f.author.value,
+        summary: f.summary.value,
+        content: f.content.value
+      });
+      document.getElementById('newsModal').classList.add('hidden');
+    }
+
+    // PPDB Manual Modal Handlers
+    function openAddPpdbModal() {
+      const modal = document.getElementById('addPpdbModal');
+      modal.querySelector('form').reset();
+      modal.classList.remove('hidden');
+    }
+
+    function handleSaveManualPpdb(e) {
+      e.preventDefault();
+      const f = e.target;
+      window.AdminCMS.addPpdbManual({
+        nama: f.nama.value,
+        jenisKelamin: f.jenisKelamin.value,
+        nisn: f.nisn.value,
+        asalSekolah: f.asalSekolah.value,
+        peminatan: f.peminatan.value,
+        jalur: f.jalur.value,
+        sistemTinggal: f.sistemTinggal.value,
+        namaWali: f.namaWali.value,
+        noHp: f.noHp.value,
+        alamat: f.alamat.value
+      });
+      document.getElementById('addPpdbModal').classList.add('hidden');
+    }
+
+    function filterPpdbList() {
+      const q = document.getElementById('ppdbSearchInput').value;
+      const st = document.getElementById('ppdbStatusFilter').value;
+      window.AdminCMS.renderPpdbTable(st, q);
+    }
+
+    // Password Modal
+    function openChangePassModal() {
+      document.getElementById('changePassModal').classList.remove('hidden');
+    }
+
+    function handleSavePass(e) {
+      e.preventDefault();
+      const f = e.target;
+      const ok = window.AdminCMS.changePassword(f.oldPass.value, f.newPass.value, f.confirmPass.value);
+      if (ok) {
+        document.getElementById('changePassModal').classList.add('hidden');
+        f.reset();
+      }
+    }
+
+    // File restore
+    function handleRestoreFile(input) {
+      if (input.files && input.files[0]) {
+        window.AdminCMS.restoreBackupJson(input.files[0]);
+      }
+    }
+  </script>
+</body>
+</html>

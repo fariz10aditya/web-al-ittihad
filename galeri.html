@@ -1,16 +1,18 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galeri Dokumentasi | MA Al-Ittihad Tawangsari Trowulan</title>
-  <meta name="description" content="Dokumentasi foto kegiatan pembelajaran, sarana prasarana, kehidupan santri di pondok pesantren, dan prestasi MA Al-Ittihad Tawangsari.">
+  <title>Galeri Foto Asli Dokumentasi | MA Al-Ittihad Tawangsari Trowulan</title>
+  <meta name="description" content="Galeri foto asli dokumentasi kegiatan belajar mengajar, wisuda kelulusan santri, gebyar seni, dan kehidupan kampus MA Al-Ittihad Tawangsari Trowulan Mojokerto.">
   
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -18,12 +20,27 @@
         extend: {
           colors: {
             brand: {
-              50: '#ecfdf5',
-              100: '#d1fae5',
-              600: '#059669',
-              700: '#047857',
-              800: '#064e3b',
-              900: '#022c22',
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e3a8a',
+              900: '#172554',
+              950: '#0f172a',
+            },
+            cream: {
+              50: '#fdfbf7',
+              100: '#fbf7ee',
+              200: '#f5eedb',
+              300: '#eddcc0',
+              400: '#e0c69e',
+              500: '#cfa86e',
+              600: '#b5894b',
+              700: '#8c642c',
+              800: '#6b4a1f',
+              900: '#422c10',
             },
             gold: {
               400: '#fbbf24',
@@ -42,21 +59,21 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-600 selection:text-white">
+<body class="bg-cream-50 text-slate-800 antialiased selection:bg-brand-700 selection:text-white">
 
   <!-- TOP BAR -->
-  <aside class="bg-brand-900 text-emerald-100 text-xs py-2 px-4 border-b border-brand-800">
+  <aside class="bg-brand-950 text-cream-200 text-xs py-2 px-4 border-b border-brand-900">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
       <div class="flex items-center gap-4">
         <span>NPSN: <strong class="text-white">20584241</strong></span>
         <span>•</span>
         <span>Akreditasi: <strong class="text-white">B</strong></span>
         <span>•</span>
-        <span>Dokumentasi Kampus Al-Ittihad</span>
+        <span>Dokumentasi Resmi MA Al-Ittihad (MALTA)</span>
       </div>
       <div class="flex items-center gap-4">
         <a href="https://wa.me/6285706666126" target="_blank" rel="noopener noreferrer" class="hover:text-gold-400 transition flex items-center gap-1">
-          <i class="fa-brands fa-whatsapp text-emerald-400"></i> WhatsApp: 0857-0666-6126
+          <i class="fa-brands fa-whatsapp text-gold-400"></i> WhatsApp: 0857-0666-6126
         </a>
       </div>
     </div>
@@ -67,30 +84,30 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         <a href="index.html" class="flex items-center gap-3">
-          <img src="assets/images/logo.svg" alt="Logo MA Al-Ittihad" class="w-12 h-12">
+          <img src="assets/images/logo.svg" alt="Logo Resmi MA Al-Ittihad" class="w-12 h-12">
           <div>
-            <span class="text-[10px] uppercase font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded">YPIS AL-ITTIHAD</span>
+            <span class="text-[10px] uppercase font-bold text-brand-800 bg-cream-200 px-1.5 py-0.5 rounded border border-cream-300">MALTA TAWANGSARI</span>
             <div class="text-base sm:text-lg font-extrabold text-brand-900 leading-tight">MA AL-ITTIHAD</div>
-            <p class="text-[11px] text-slate-500">Tawangsari • Trowulan</p>
+            <p class="text-[11px] text-cream-700 font-medium">Tawangsari • Trowulan • Mojokerto</p>
           </div>
         </a>
 
         <nav class="hidden lg:flex items-center gap-1">
-          <a href="index.html" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-emerald-700 rounded-lg">Beranda</a>
-          <a href="profil.html" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-emerald-700 rounded-lg">Profil</a>
-          <a href="akademik.html" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-emerald-700 rounded-lg">Akademik</a>
-          <a href="index.html#ekstrakurikuler" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-emerald-700 rounded-lg">Ekstrakurikuler</a>
-          <a href="index.html#fasilitas" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-emerald-700 rounded-lg">Fasilitas</a>
-          <a href="berita.html" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-emerald-700 rounded-lg">Berita</a>
-          <a href="galeri.html" class="px-3 py-2 text-sm font-semibold text-emerald-700 bg-emerald-50/80 rounded-lg">Galeri</a>
-          <a href="kontak.html" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-emerald-700 rounded-lg">Kontak</a>
+          <a href="index.html" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-brand-700 hover:bg-cream-100 rounded-lg transition">Beranda</a>
+          <a href="profil.html" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-brand-700 hover:bg-cream-100 rounded-lg transition">Profil</a>
+          <a href="akademik.html" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-brand-700 hover:bg-cream-100 rounded-lg transition">Akademik</a>
+          <a href="index.html#ekstrakurikuler" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-brand-700 hover:bg-cream-100 rounded-lg transition">Ekstrakurikuler</a>
+          <a href="index.html#fasilitas" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-brand-700 hover:bg-cream-100 rounded-lg transition">Fasilitas</a>
+          <a href="berita.html" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-brand-700 hover:bg-cream-100 rounded-lg transition">Berita</a>
+          <a href="galeri.html" class="px-3 py-2 text-sm font-semibold text-brand-900 bg-cream-200/90 rounded-lg border border-cream-300">Galeri</a>
+          <a href="kontak.html" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-brand-700 hover:bg-cream-100 rounded-lg transition">Kontak</a>
         </nav>
 
         <div class="flex items-center gap-3">
-          <a href="ppdb.html" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs px-4 py-2 rounded-xl shadow">
-            <i class="fa-solid fa-user-plus"></i> PPDB Online
+          <a href="ppdb.html" class="inline-flex items-center gap-2 bg-brand-800 hover:bg-brand-900 text-cream-50 font-semibold text-xs px-4 py-2 rounded-xl shadow border border-brand-700 transition">
+            <i class="fa-solid fa-user-plus text-gold-400"></i> PPDB Online
           </a>
-          <button type="button" id="mobileMenuToggle" class="lg:hidden p-2 text-slate-700 hover:text-emerald-700">
+          <button type="button" id="mobileMenuToggle" class="lg:hidden p-2 text-slate-700 hover:text-brand-800">
             <i class="fa-solid fa-bars text-xl"></i>
           </button>
         </div>
@@ -100,133 +117,311 @@
 
   <!-- MOBILE DRAWER -->
   <div id="mobileMenuBackdrop" class="fixed inset-0 bg-black/50 z-50 hidden backdrop-blur-sm"></div>
-  <div id="mobileMenuDrawer" class="fixed top-0 right-0 w-80 max-w-full h-full bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
-    <div class="p-5 border-b border-slate-100 flex items-center justify-between bg-emerald-50/50">
-      <span class="font-bold text-sm text-brand-900">MA AL-ITTIHAD</span>
-      <button type="button" id="mobileMenuClose" class="w-8 h-8 rounded-lg bg-white border border-slate-200 text-slate-500">
+  <div id="mobileMenuDrawer" class="fixed top-0 right-0 w-80 max-w-full h-full bg-cream-50 z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
+    <div class="p-5 border-b border-cream-200 flex items-center justify-between bg-cream-100">
+      <div class="flex items-center gap-2">
+        <img src="assets/images/logo.svg" alt="Logo" class="w-8 h-8">
+        <span class="font-bold text-sm text-brand-900">MA AL-ITTIHAD (MALTA)</span>
+      </div>
+      <button type="button" id="mobileMenuClose" class="w-8 h-8 rounded-lg bg-white border border-cream-300 text-slate-500">
         <i class="fa-solid fa-xmark"></i>
       </button>
     </div>
-    <div class="p-5 flex-1 overflow-y-auto space-y-1">
-      <a href="index.html" class="block px-3 py-2 text-slate-700 hover:bg-slate-50 rounded-lg font-medium text-sm">Beranda</a>
-      <a href="profil.html" class="block px-3 py-2 text-slate-700 hover:bg-slate-50 rounded-lg font-medium text-sm">Profil & Sejarah</a>
-      <a href="akademik.html" class="block px-3 py-2 text-slate-700 hover:bg-slate-50 rounded-lg font-medium text-sm">Akademik</a>
-      <a href="ppdb.html" class="block px-3 py-2 text-slate-700 hover:bg-slate-50 rounded-lg font-medium text-sm">PPDB Online</a>
-      <a href="berita.html" class="block px-3 py-2 text-slate-700 hover:bg-slate-50 rounded-lg font-medium text-sm">Berita</a>
-      <a href="galeri.html" class="block px-3 py-2 text-emerald-800 bg-emerald-50 rounded-lg font-bold text-sm">Galeri</a>
-      <a href="kontak.html" class="block px-3 py-2 text-slate-700 hover:bg-slate-50 rounded-lg font-medium text-sm">Kontak</a>
+    <div class="p-5 flex-1 overflow-y-auto space-y-1 text-sm">
+      <a href="index.html" class="block px-3 py-2 text-slate-700 hover:bg-cream-100 rounded-lg font-medium">Beranda</a>
+      <a href="profil.html" class="block px-3 py-2 text-slate-700 hover:bg-cream-100 rounded-lg font-medium">Profil & Sejarah</a>
+      <a href="akademik.html" class="block px-3 py-2 text-slate-700 hover:bg-cream-100 rounded-lg font-medium">Akademik</a>
+      <a href="ppdb.html" class="block px-3 py-2 text-slate-700 hover:bg-cream-100 rounded-lg font-medium">PPDB Online</a>
+      <a href="berita.html" class="block px-3 py-2 text-slate-700 hover:bg-cream-100 rounded-lg font-medium">Berita</a>
+      <a href="galeri.html" class="block px-3 py-2 text-brand-900 bg-cream-200 rounded-lg font-bold">Galeri Foto Asli</a>
+      <a href="kontak.html" class="block px-3 py-2 text-slate-700 hover:bg-cream-100 rounded-lg font-medium">Kontak & Peta</a>
     </div>
   </div>
 
   <!-- HEADER -->
-  <section class="bg-pattern-dark text-white py-14 relative">
+  <section class="bg-pattern-dark text-white py-14 relative border-b border-brand-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="flex items-center gap-2 text-xs text-emerald-300 mb-3">
+      <div class="flex items-center gap-2 text-xs text-cream-300 mb-3">
         <a href="index.html" class="hover:underline">Beranda</a>
         <i class="fa-solid fa-chevron-right text-[10px]"></i>
-        <span class="text-white font-medium">Dokumentasi</span>
+        <span class="text-white font-medium">Galeri Foto Asli</span>
       </div>
-      <h1 class="text-3xl sm:text-4xl font-extrabold text-white">Galeri Kehidupan Madrasah & Santri</h1>
-      <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-        Merekam jejak kebersamaan, semangat menuntut ilmu, dan hangatnya suasana kekeluargaan di lingkungan MA & Ponpes Al-Ittihad Tawangsari.
+      <span class="text-xs font-bold uppercase tracking-widest text-gold-400 bg-brand-800/80 px-3 py-1 rounded-full border border-brand-700 mb-2 inline-block">
+        DOKUMENTASI ASLI KEGIATAN MADRASAH
+      </span>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Galeri Foto Asli MA Al-Ittihad Tawangsari</h1>
+      <p class="text-cream-200 text-sm sm:text-base mt-2 max-w-2xl">
+        Kumpulan dokumentasi foto nyata aktivitas wisuda kelulusan, gebyar seni santri, kompleks pondok pesantren, dan peringatan hari besar di MA Al-Ittihad Tawangsari Trowulan Mojokerto.
       </p>
     </div>
   </section>
 
   <!-- GALLERY CONTENT -->
-  <main class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <main class="py-16 bg-cream-50 bg-islamic-pattern">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+
+      <!-- Filter Tabs -->
+      <div class="flex flex-wrap items-center justify-center gap-2 pb-2">
+        <button class="filter-btn active px-4 py-2 rounded-xl text-xs font-bold bg-brand-800 text-white shadow transition" data-filter="all">
+          Semua Foto Asli
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-cream-300 hover:bg-cream-100 transition" data-filter="kelulusan">
+          Wisuda & Kelulusan
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-cream-300 hover:bg-cream-100 transition" data-filter="pesantren">
+          Pesantren & Tokoh
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-cream-300 hover:bg-cream-100 transition" data-filter="kegiatan">
+          Gebyar Seni & PHBI
+        </button>
+      </div>
+
+      <!-- Gallery Grid with Real Photos -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="photoGallery">
         
-        <!-- Galeri Card 1 -->
-        <div class="group relative rounded-3xl overflow-hidden border border-slate-200 shadow-sm bg-gradient-to-tr from-brand-900 to-emerald-800 aspect-video flex flex-col justify-end p-6 text-white card-hover">
-          <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition"></div>
-          <div class="relative z-10">
-            <span class="text-[10px] font-bold uppercase tracking-wider bg-gold-500 text-brand-900 px-2.5 py-0.5 rounded-full inline-block mb-1">
-              Akademik
+        <!-- Foto Asli 1: Kelulusan MA -->
+        <div class="filter-item group bg-white rounded-3xl overflow-hidden border border-cream-300 shadow-sm card-hover flex flex-col" data-category="kelulusan">
+          <div class="relative overflow-hidden aspect-video bg-slate-900">
+            <img src="assets/images/foto-kelulusan-ma.jpg" alt="Tasyakuran Kelulusan MA Al-Ittihad Tawangsari" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-3 left-3 bg-brand-900/90 text-cream-200 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm border border-brand-700">
+              <i class="fa-solid fa-graduation-cap text-gold-400 mr-1"></i> Tasyakuran Kelulusan MA
             </span>
-            <h3 class="font-bold text-base text-white">Kegiatan Belajar Mengajar Aktif di Kelas</h3>
-            <p class="text-xs text-emerald-200 mt-1">Interaksi dinamis santri dalam menyerap materi kurikulum formal madrasah.</p>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-sm text-brand-900">Tasyakuran Kelulusan Siswa MA Al-Ittihad Tawangsari</h3>
+              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                Momen penuh haru dan kebahagiaan prosesi purna wiyata dan tasyakuran kelulusan santri MA Al-Ittihad Tawangsari Trowulan bersama dewan guru dan asatidz.
+              </p>
+            </div>
+            <div class="pt-3 mt-3 border-t border-cream-200 text-[11px] text-cream-700 font-semibold flex items-center justify-between">
+              <span><i class="fa-solid fa-camera mr-1"></i> Dokumentasi Resmi MALTA</span>
+              <span>Trowulan</span>
+            </div>
           </div>
         </div>
 
-        <!-- Galeri Card 2 -->
-        <div class="group relative rounded-3xl overflow-hidden border border-slate-200 shadow-sm bg-gradient-to-tr from-emerald-800 to-teal-700 aspect-video flex flex-col justify-end p-6 text-white card-hover">
-          <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition"></div>
-          <div class="relative z-10">
-            <span class="text-[10px] font-bold uppercase tracking-wider bg-emerald-500 text-white px-2.5 py-0.5 rounded-full inline-block mb-1">
-              Tahfidz
+        <!-- Foto Asli 2: Wisuda Santri -->
+        <div class="filter-item group bg-white rounded-3xl overflow-hidden border border-cream-300 shadow-sm card-hover flex flex-col" data-category="kelulusan">
+          <div class="relative overflow-hidden aspect-video bg-slate-900">
+            <img src="assets/images/foto-wisuda-santri.jpg" alt="Wisuda Santri Ponpes & MA Al-Ittihad" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-3 left-3 bg-brand-900/90 text-cream-200 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm border border-brand-700">
+              <i class="fa-solid fa-award text-gold-400 mr-1"></i> Wisuda Santri Ponpes
             </span>
-            <h3 class="font-bold text-base text-white">Halaqah Tahsin & Muroja'ah Al-Qur'an</h3>
-            <p class="text-xs text-emerald-100 mt-1">Bimbingan tajwid dan hafalan Al-Qur'an bersama asatidz pengasuh.</p>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-sm text-brand-900">Haflah Wisuda Santri SMP & MA Pondok Pesantren Al-Ittihad</h3>
+              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                Pengukuhan kelulusan santri mukim di panggung utama yayasan, disaksikan para masyaikh, pengasuh pondok, dan para wali santri.
+              </p>
+            </div>
+            <div class="pt-3 mt-3 border-t border-cream-200 text-[11px] text-cream-700 font-semibold flex items-center justify-between">
+              <span><i class="fa-solid fa-camera mr-1"></i> Purna Wiyata Pesantren</span>
+              <span>Tawangsari</span>
+            </div>
           </div>
         </div>
 
-        <!-- Galeri Card 3 -->
-        <div class="group relative rounded-3xl overflow-hidden border border-slate-200 shadow-sm bg-gradient-to-tr from-amber-800 to-amber-600 aspect-video flex flex-col justify-end p-6 text-white card-hover">
-          <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition"></div>
-          <div class="relative z-10">
-            <span class="text-[10px] font-bold uppercase tracking-wider bg-white text-brand-900 px-2.5 py-0.5 rounded-full inline-block mb-1">
-              Diniyah
+        <!-- Foto Asli 3: Kompleks Gedung Pesantren -->
+        <div class="filter-item group bg-white rounded-3xl overflow-hidden border border-cream-300 shadow-sm card-hover flex flex-col" data-category="pesantren">
+          <div class="relative overflow-hidden aspect-video bg-slate-900">
+            <img src="assets/images/foto-gedung-pesantren.jpg" alt="Gedung Pondok Pesantren Al-Ittihad Tawangsari" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-3 left-3 bg-brand-900/90 text-cream-200 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm border border-brand-700">
+              <i class="fa-solid fa-mosque text-gold-400 mr-1"></i> Kompleks Pesantren
             </span>
-            <h3 class="font-bold text-base text-white">Sorogan Kitab Kuning di Masjid Pesantren</h3>
-            <p class="text-xs text-amber-100 mt-1">Mengaji makna gandul dan pendalaman gramatika nahwu shorof.</p>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-sm text-brand-900">Gedung Kampus & Pesantren Al-Ittihad Tawangsari</h3>
+              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                Kompleks sarana pendidikan terpadu di Jl. Raden Wijaya No. 105 Tawangsari, yang menjadi pusat belajar madrasah formal dan asrama santri tahfidz.
+              </p>
+            </div>
+            <div class="pt-3 mt-3 border-t border-cream-200 text-[11px] text-cream-700 font-semibold flex items-center justify-between">
+              <span><i class="fa-solid fa-location-dot mr-1"></i> Jl. Raden Wijaya No. 105</span>
+              <span>Trowulan</span>
+            </div>
           </div>
         </div>
 
-        <!-- Galeri Card 4 -->
-        <div class="group relative rounded-3xl overflow-hidden border border-slate-200 shadow-sm bg-gradient-to-tr from-blue-900 to-indigo-700 aspect-video flex flex-col justify-end p-6 text-white card-hover">
-          <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition"></div>
-          <div class="relative z-10">
-            <span class="text-[10px] font-bold uppercase tracking-wider bg-blue-400 text-brand-900 px-2.5 py-0.5 rounded-full inline-block mb-1">
-              Teknologi
+        <!-- Foto Asli 4: KH. Albazi Nawawi -->
+        <div class="filter-item group bg-white rounded-3xl overflow-hidden border border-cream-300 shadow-sm card-hover flex flex-col" data-category="pesantren">
+          <div class="relative overflow-hidden aspect-video bg-slate-900">
+            <img src="assets/images/foto-kh-albazi-nawawi.jpg" alt="KH. Albazi Nawawi Pengasuh PPTQ Al-Ittihad Tawangsari" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-3 left-3 bg-brand-900/90 text-cream-200 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm border border-brand-700">
+              <i class="fa-solid fa-user-tie text-gold-400 mr-1"></i> Tokoh & Pengasuh
             </span>
-            <h3 class="font-bold text-base text-white">Praktikum di Laboratorium Komputer</h3>
-            <p class="text-xs text-blue-100 mt-1">Pelatihan literasi digital, desain grafis, dan simulasi ANBK.</p>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-sm text-brand-900">KH. Albazi Nawawi (Pendiri MA & Pengasuh PPTQ)</h3>
+              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                Sosok guru mulia yang mendirikan MA Al-Ittihad tahun 2000 serta membimbing para santri Tahfidzul Qur'an di Pondok Pesantren Al-Ittihad Tawangsari.
+              </p>
+            </div>
+            <div class="pt-3 mt-3 border-t border-cream-200 text-[11px] text-cream-700 font-semibold flex items-center justify-between">
+              <span><i class="fa-solid fa-heart mr-1"></i> Masyayikh Pesantren</span>
+              <span>Est. 2000</span>
+            </div>
           </div>
         </div>
 
-        <!-- Galeri Card 5 -->
-        <div class="group relative rounded-3xl overflow-hidden border border-slate-200 shadow-sm bg-gradient-to-tr from-rose-900 to-pink-700 aspect-video flex flex-col justify-end p-6 text-white card-hover">
-          <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition"></div>
-          <div class="relative z-10">
-            <span class="text-[10px] font-bold uppercase tracking-wider bg-rose-400 text-brand-900 px-2.5 py-0.5 rounded-full inline-block mb-1">
-              Seni Islam
+        <!-- Foto Asli 5: Gebyar Pentas Seni -->
+        <div class="filter-item group bg-white rounded-3xl overflow-hidden border border-cream-300 shadow-sm card-hover flex flex-col" data-category="kegiatan">
+          <div class="relative overflow-hidden aspect-video bg-slate-900">
+            <img src="assets/images/foto-pentas-seni.jpg" alt="Gebyar Pentas Seni Santri Al-Ittihad" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-3 left-3 bg-brand-900/90 text-cream-200 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm border border-brand-700">
+              <i class="fa-solid fa-masks-theater text-gold-400 mr-1"></i> Gebyar Seni Santri
             </span>
-            <h3 class="font-bold text-base text-white">Latihan Seni Hadrah & Rebana Banjari</h3>
-            <p class="text-xs text-rose-100 mt-1">Gema sholawat nabi dalam asuhan grup banjari santri Al-Ittihad.</p>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-sm text-brand-900">Gebyar Pentas Seni Akhirussanah Al-Ittihad</h3>
+              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                Ajang kreasi bakat santri dalam seni tari Islami, hadrah rebana banjari, teater, puisi, dan musik gambus yang meriah.
+              </p>
+            </div>
+            <div class="pt-3 mt-3 border-t border-cream-200 text-[11px] text-cream-700 font-semibold flex items-center justify-between">
+              <span><i class="fa-solid fa-star mr-1"></i> Kreasi Santri MALTA</span>
+              <span>Mojokerto</span>
+            </div>
           </div>
         </div>
 
-        <!-- Galeri Card 6 -->
-        <div class="group relative rounded-3xl overflow-hidden border border-slate-200 shadow-sm bg-gradient-to-tr from-emerald-950 to-brand-900 aspect-video flex flex-col justify-end p-6 text-white card-hover">
-          <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition"></div>
-          <div class="relative z-10">
-            <span class="text-[10px] font-bold uppercase tracking-wider bg-amber-400 text-brand-900 px-2.5 py-0.5 rounded-full inline-block mb-1">
-              Kepanduan
+        <!-- Foto Asli 6: Haul Akbar KH. Nawawi -->
+        <div class="filter-item group bg-white rounded-3xl overflow-hidden border border-cream-300 shadow-sm card-hover flex flex-col" data-category="kegiatan">
+          <div class="relative overflow-hidden aspect-video bg-slate-900">
+            <img src="assets/images/foto-haul-kh-nawawi.jpg" alt="Haul Akbar KH. Nawawi Romli PPTQ Al-Ittihad" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-3 left-3 bg-brand-900/90 text-cream-200 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm border border-brand-700">
+              <i class="fa-solid fa-book-open text-gold-400 mr-1"></i> Haul Akbar Pendiri
             </span>
-            <h3 class="font-bold text-base text-white">Perkemahan & Persami Gugus Depan Pramuka</h3>
-            <p class="text-xs text-emerald-200 mt-1">Membentuk ketangguhan mental, kepedulian sosial, dan kekompakan santri.</p>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-sm text-brand-900">Haul Akbar KH. Nawawi Romli (Pendiri Pesantren Th 1956)</h3>
+              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                Peringatan haul akbar pendiri pondok pesantren dihadiri ribuan jamaah, alumni, habaib, dan para kiai se-Jawa Timur.
+              </p>
+            </div>
+            <div class="pt-3 mt-3 border-t border-cream-200 text-[11px] text-cream-700 font-semibold flex items-center justify-between">
+              <span><i class="fa-solid fa-calendar mr-1"></i> Agenda Rutin Akbar</span>
+              <span>Tawangsari</span>
+            </div>
           </div>
         </div>
 
+        <!-- Foto Asli 7: Maulid Nabi -->
+        <div class="filter-item group bg-white rounded-3xl overflow-hidden border border-cream-300 shadow-sm card-hover flex flex-col" data-category="kegiatan">
+          <div class="relative overflow-hidden aspect-video bg-slate-900">
+            <img src="assets/images/foto-maulid-nabi.jpg" alt="Peringatan Maulid Nabi Yayasan Al-Ittihad" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-3 left-3 bg-brand-900/90 text-cream-200 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm border border-brand-700">
+              <i class="fa-solid fa-hands-praying text-gold-400 mr-1"></i> Maulid Nabi SAW
+            </span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-sm text-brand-900">Peringatan Maulid Nabi Muhammad SAW Yayasan Al-Ittihad</h3>
+              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                Pembacaan Maulid Simthudduror dan sholawat nabi bersama seluruh santri, dewan asatidz, dan masyarakat sekitar Trowulan.
+              </p>
+            </div>
+            <div class="pt-3 mt-3 border-t border-cream-200 text-[11px] text-cream-700 font-semibold flex items-center justify-between">
+              <span><i class="fa-solid fa-users mr-1"></i> Majelis Sholawat</span>
+              <span>PHBI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Foto Asli 8: Rutinan Jum'at Santri -->
+        <div class="filter-item group bg-white rounded-3xl overflow-hidden border border-cream-300 shadow-sm card-hover flex flex-col" data-category="pesantren">
+          <div class="relative overflow-hidden aspect-video bg-slate-900">
+            <img src="assets/images/foto-rutinan-santri.jpg" alt="Rutinan Jum'at Santri PPTQ Al-Ittihad" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-3 left-3 bg-brand-900/90 text-cream-200 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm border border-brand-700">
+              <i class="fa-solid fa-quran text-gold-400 mr-1"></i> Rutinan Santri
+            </span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-sm text-brand-900">Rutinan Pengajian & Khotmil Qur'an Santri</h3>
+              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                Aktivitas berkala simaan Al-Qur'an dan istighotsah bersama untuk melatih ketenangan spiritual dan kekompakan santri.
+              </p>
+            </div>
+            <div class="pt-3 mt-3 border-t border-cream-200 text-[11px] text-cream-700 font-semibold flex items-center justify-between">
+              <span><i class="fa-solid fa-clock mr-1"></i> Rutinan Pesantren</span>
+              <span>Tawangsari</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Foto Asli 9: Kegiatan Akbar Yayasan -->
+        <div class="filter-item group bg-white rounded-3xl overflow-hidden border border-cream-300 shadow-sm card-hover flex flex-col" data-category="kegiatan">
+          <div class="relative overflow-hidden aspect-video bg-slate-900">
+            <img src="assets/images/foto-kegiatan-yayasan.jpg" alt="Kegiatan Akbar Civitas Akademika Al-Ittihad" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-3 left-3 bg-brand-900/90 text-cream-200 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm border border-brand-700">
+              <i class="fa-solid fa-shield-halved text-gold-400 mr-1"></i> Civitas Akademika
+            </span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-sm text-brand-900">Pertemuan & Musyawarah Akbar Yayasan Al-Ittihad</h3>
+              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                Sinergi para pengurus yayasan, kepala madrasah, pengasuh asrama, dan komite sekolah dalam memajukan mutu pendidikan santri.
+              </p>
+            </div>
+            <div class="pt-3 mt-3 border-t border-cream-200 text-[11px] text-cream-700 font-semibold flex items-center justify-between">
+              <span><i class="fa-solid fa-handshake mr-1"></i> YPIS Al-Ittihad</span>
+              <span>Trowulan</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Instagram CTA Banner -->
+      <div class="bg-gradient-to-r from-brand-900 via-brand-850 to-brand-950 text-white rounded-3xl p-8 border border-brand-800 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div class="space-y-2 text-center sm:text-left">
+          <span class="text-xs font-bold text-gold-400 uppercase tracking-widest bg-brand-800 px-3 py-1 rounded-full border border-brand-700">
+            <i class="fa-brands fa-instagram mr-1"></i> INSTAGRAM RESMI
+          </span>
+          <h2 class="text-xl sm:text-2xl font-black text-white">Lihat Ratusan Foto & Cerita Santri di @galery_malta</h2>
+          <p class="text-xs text-cream-200 max-w-xl">
+            Ikuti akun Instagram resmi MA Al-Ittihad Tawangsari untuk melihat pembaruan foto harian, prestasi siswa, dan video reels kegiatan santri di Trowulan.
+          </p>
+        </div>
+        <a href="https://www.instagram.com/galery_malta/" target="_blank" rel="noopener noreferrer" 
+           class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-brand-950 font-extrabold px-6 py-3.5 rounded-2xl shadow-lg transition transform hover:-translate-y-0.5 text-xs sm:text-sm shrink-0">
+          <i class="fa-brands fa-instagram text-base"></i>
+          <span>Buka @galery_malta</span>
+          <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+        </a>
       </div>
 
     </div>
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-brand-900 text-slate-300 text-sm py-10 border-t border-brand-800">
+  <footer class="bg-brand-950 text-cream-300 text-sm py-10 border-t border-brand-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
       <div>
-        <p>&copy; 2026 MA Al-Ittihad Tawangsari Trowulan Mojokerto. NPSN: 20584241.</p>
+        <p>&copy; 2026 MA Al-Ittihad Tawangsari (MALTA) Trowulan Mojokerto. NPSN: 20584241.</p>
       </div>
       <div class="flex gap-4">
-        <a href="index.html" class="hover:text-emerald-400">Beranda</a>
-        <a href="profil.html" class="hover:text-emerald-400">Profil</a>
-        <a href="ppdb.html" class="hover:text-emerald-400">PPDB Online</a>
-        <a href="kontak.html" class="hover:text-emerald-400">Kontak</a>
+        <a href="index.html" class="hover:text-gold-400">Beranda</a>
+        <a href="profil.html" class="hover:text-gold-400">Profil</a>
+        <a href="ppdb.html" class="hover:text-gold-400">PPDB Online</a>
+        <a href="kontak.html" class="hover:text-gold-400">Kontak</a>
+        <a href="admin.html" class="hover:text-gold-400 font-semibold"><i class="fa-solid fa-lock text-[10px] mr-1"></i>Portal Admin</a>
       </div>
     </div>
   </footer>
