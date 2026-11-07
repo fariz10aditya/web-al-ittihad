@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -55,7 +55,6 @@
           }
         }
       }
-    }
     }
   </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -169,6 +168,13 @@
           <i class="fa-solid fa-newspaper w-4 text-gold-400"></i> Berita & Prestasi
         </button>
 
+        <button onclick="switchTab('galeri')" class="admin-nav-btn w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl font-semibold transition" data-tab="galeri">
+          <span class="flex items-center gap-3">
+            <i class="fa-solid fa-images w-4 text-gold-400"></i> Galeri Foto Asli
+          </span>
+          <span id="badgeGaleriCount" class="bg-brand-700 text-cream-200 text-[10px] font-bold px-2 py-0.5 rounded-full">0</span>
+        </button>
+
         <button onclick="switchTab('ekskul')" class="admin-nav-btn w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-semibold transition" data-tab="ekskul">
           <i class="fa-solid fa-trophy w-4 text-gold-400"></i> Ekstrakurikuler
         </button>
@@ -215,6 +221,12 @@
           <h2 id="pageTitle" class="text-base font-extrabold text-slate-800">Ringkasan Sistem</h2>
         </div>
         <div class="flex items-center gap-3">
+          <!-- Live Backend Status Indicator -->
+          <div id="backendStatusIndicator" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold bg-cream-100 text-brand-900 border border-cream-300 shadow-sm">
+            <span id="backendStatusDot" class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span id="backendStatusText">Memeriksa Server...</span>
+          </div>
+
           <a href="index.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-cream-100 text-brand-800 border border-cream-300 hover:bg-cream-200 transition">
             <i class="fa-solid fa-globe"></i>
             <span>Buka Web Utama</span>
@@ -533,7 +545,26 @@
         </div>
 
         <!-- ==============================================
-             PANE 6: EKSTRAKURIKULER
+             PANE: GALERI FOTO ASLI
+             ============================================== -->
+        <div id="pane-galeri" class="admin-pane hidden space-y-4">
+          <div class="bg-white p-4 rounded-2xl border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-sm">
+            <div>
+              <h3 class="font-bold text-sm text-slate-900">Manajemen Galeri Foto Asli Madrasah & Pesantren</h3>
+              <p class="text-xs text-slate-500">Unggah foto kegiatan nyata, wisuda, kampus pesantren, dan kegiatan santri.</p>
+            </div>
+            <button onclick="openAddGaleriModal()" class="px-4 py-2 bg-brand-800 hover:bg-brand-900 text-white text-xs font-bold rounded-xl shadow transition inline-flex items-center gap-1.5 shrink-0">
+              <i class="fa-solid fa-cloud-arrow-up"></i>
+              <span>Tambah / Unggah Foto</span>
+            </button>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-4">
+            <div id="galeriAdminGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <!-- Populated via admin.js -->
+            </div>
+          </div>
+        </div>
              ============================================== -->
         <div id="pane-ekskul" class="admin-pane hidden space-y-4">
           
@@ -717,6 +748,17 @@
         </div>
 
         <div>
+          <label class="block font-bold text-slate-700 uppercase mb-1">Foto Sampul Berita</label>
+          <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200">
+            <img id="newsPreviewImg" src="assets/images/foto-kelulusan-ma.jpg" class="w-16 h-12 object-cover rounded-lg border border-slate-300 shrink-0">
+            <div class="flex-1 space-y-1">
+              <input type="file" id="newsFileInput" accept="image/*" class="text-xs text-slate-500 w-full" onchange="handleNewsFileUpload(this)">
+              <input type="text" name="image" id="newsImageUrl" placeholder="assets/images/... atau unggah file" class="w-full px-2 py-1 rounded border border-slate-300 text-[11px] outline-none">
+            </div>
+          </div>
+        </div>
+
+        <div>
           <label class="block font-bold text-slate-700 uppercase mb-1">Ringkasan Singkat (Lead)</label>
           <textarea name="summary" rows="2" placeholder="1-2 kalimat pengantar..." class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none"></textarea>
         </div>
@@ -738,7 +780,67 @@
     </div>
   </div>
 
-  <!-- Modal Tambah Pendaftar Manual Offline -->
+  <!-- Modal Tambah / Edit Galeri Foto Asli -->
+  <div id="galeriModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-4">
+        <h3 id="galeriModalTitle" class="font-bold text-base text-slate-900">Tambah Foto Galeri Asli</h3>
+        <button onclick="document.getElementById('galeriModal').classList.add('hidden')" class="text-slate-400 hover:text-slate-600">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <form onsubmit="handleSaveGaleri(event)" class="space-y-3 text-xs">
+        <input type="hidden" name="id">
+
+        <div>
+          <label class="block font-bold text-slate-700 uppercase mb-1">Judul / Kegiatan Foto <span class="text-red-500">*</span></label>
+          <input type="text" name="title" required placeholder="Contoh: Tasyakuran Kelulusan Santri..." class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-700 uppercase mb-1">Kategori Filter</label>
+            <select name="category" class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none bg-white">
+              <option value="kelulusan">Wisuda & Kelulusan</option>
+              <option value="santri">Kegiatan Santri</option>
+              <option value="pesantren">Pesantren & Masyayikh</option>
+              <option value="kegiatan">Gebyar Seni & PHBI</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 uppercase mb-1">Tanggal / Waktu</label>
+            <input type="text" name="date" placeholder="Contoh: Mei 2026" class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none">
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 uppercase mb-1">File Foto / Gambar <span class="text-red-500">*</span></label>
+          <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200">
+            <img id="galeriPreviewImg" src="assets/images/foto-wisuda-santri.jpg" class="w-16 h-12 object-cover rounded-lg border border-slate-300 shrink-0">
+            <div class="flex-1 space-y-1">
+              <input type="file" id="galeriFileInput" accept="image/*" class="text-xs text-slate-500 w-full" onchange="handleGaleriFileUpload(this)">
+              <input type="text" name="image" id="galeriImageUrl" required placeholder="assets/images/... atau pilih file foto" class="w-full px-2 py-1 rounded border border-slate-300 text-[11px] outline-none">
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 uppercase mb-1">Keterangan / Caption Singkat</label>
+          <textarea name="caption" rows="2" placeholder="Deskripsi singkat foto kegiatan..." class="w-full px-3 py-2 rounded-xl border border-slate-300 outline-none"></textarea>
+        </div>
+
+        <div class="pt-2 flex justify-end gap-2">
+          <button type="button" onclick="document.getElementById('galeriModal').classList.add('hidden')" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl">
+            Batal
+          </button>
+          <button type="submit" class="px-5 py-2 bg-brand-800 hover:bg-brand-900 text-white font-bold rounded-xl shadow">
+            Simpan Foto Galeri
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
   <div id="addPpdbModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
     <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
       <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-4">
@@ -861,6 +963,7 @@
   </div>
 
   <!-- UI SCRIPTS -->
+  <script src="assets/js/api.js"></script>
   <script src="assets/js/admin.js"></script>
   <script>
     // Tab Switching Logic
@@ -887,16 +990,19 @@
         profil: 'Pengaturan Profil & Legalitas Madrasah',
         kontak: 'Pengaturan Kontak & Google Maps',
         berita: 'Manajemen Berita & Pengumuman',
+        galeri: 'Manajemen Galeri Foto Asli (MALTA)',
         ekskul: 'Manajemen Ekstrakurikuler',
         faqs: 'Manajemen FAQ (Tanya Jawab)',
         backup: 'Cadangan Data & Pemulihan Sistem'
       };
       document.getElementById('pageTitle').textContent = titles[tabId] || 'Panel Kendali';
 
-      // Update badge PPDB count
-      const badge = document.getElementById('badgePpdbCount');
-      if (badge && window.AdminCMS) {
-        badge.textContent = window.AdminCMS.ppdbList.length;
+      // Update badge PPDB & Galeri count
+      if (window.AdminCMS) {
+        const badgePpdb = document.getElementById('badgePpdbCount');
+        if (badgePpdb) badgePpdb.textContent = window.AdminCMS.ppdbList.length;
+        const badgeGaleri = document.getElementById('badgeGaleriCount');
+        if (badgeGaleri) badgeGaleri.textContent = window.AdminCMS.galeriList.length;
       }
     }
 
@@ -954,8 +1060,26 @@
       const modal = document.getElementById('newsModal');
       modal.querySelector('form').reset();
       modal.querySelector('[name="id"]').value = '';
+      const preview = document.getElementById('newsPreviewImg');
+      if (preview) preview.src = 'assets/images/foto-kelulusan-ma.jpg';
       document.getElementById('newsModalTitle').textContent = 'Tulis Berita / Prestasi Baru';
       modal.classList.remove('hidden');
+    }
+
+    async function handleNewsFileUpload(input) {
+      if (input.files && input.files[0]) {
+        try {
+          window.AdminCMS.showToast('Mengunggah gambar sampul...', 'info');
+          const res = await window.API.uploadImageFile(input.files[0]);
+          if (res.url) {
+            document.getElementById('newsImageUrl').value = res.url;
+            document.getElementById('newsPreviewImg').src = res.url;
+            window.AdminCMS.showToast('Gambar berhasil diunggah!', 'success');
+          }
+        } catch (err) {
+          window.AdminCMS.showToast(err.message || 'Gagal mengunggah gambar', 'error');
+        }
+      }
     }
 
     function handleSaveNews(e) {
@@ -966,10 +1090,52 @@
         title: f.title.value,
         category: f.category.value,
         author: f.author.value,
+        image: f.image.value || 'assets/images/foto-kelulusan-ma.jpg',
         summary: f.summary.value,
         content: f.content.value
       });
       document.getElementById('newsModal').classList.add('hidden');
+    }
+
+    // Galeri Modal Handlers
+    function openAddGaleriModal() {
+      const modal = document.getElementById('galeriModal');
+      modal.querySelector('form').reset();
+      modal.querySelector('[name="id"]').value = '';
+      const preview = document.getElementById('galeriPreviewImg');
+      if (preview) preview.src = 'assets/images/foto-wisuda-santri.jpg';
+      document.getElementById('galeriModalTitle').textContent = 'Tambah Foto Galeri Asli';
+      modal.classList.remove('hidden');
+    }
+
+    async function handleGaleriFileUpload(input) {
+      if (input.files && input.files[0]) {
+        try {
+          window.AdminCMS.showToast('Mengunggah foto kegiatan...', 'info');
+          const res = await window.API.uploadImageFile(input.files[0]);
+          if (res.url) {
+            document.getElementById('galeriImageUrl').value = res.url;
+            document.getElementById('galeriPreviewImg').src = res.url;
+            window.AdminCMS.showToast('Foto berhasil diunggah!', 'success');
+          }
+        } catch (err) {
+          window.AdminCMS.showToast(err.message || 'Gagal mengunggah foto', 'error');
+        }
+      }
+    }
+
+    function handleSaveGaleri(e) {
+      e.preventDefault();
+      const f = e.target;
+      window.AdminCMS.addOrUpdateGaleri({
+        id: f.id.value || null,
+        title: f.title.value,
+        category: f.category.value,
+        date: f.date.value || '',
+        image: f.image.value || 'assets/images/foto-wisuda-santri.jpg',
+        caption: f.caption.value || ''
+      });
+      document.getElementById('galeriModal').classList.add('hidden');
     }
 
     // PPDB Manual Modal Handlers
@@ -1008,10 +1174,10 @@
       document.getElementById('changePassModal').classList.remove('hidden');
     }
 
-    function handleSavePass(e) {
+    async function handleSavePass(e) {
       e.preventDefault();
       const f = e.target;
-      const ok = window.AdminCMS.changePassword(f.oldPass.value, f.newPass.value, f.confirmPass.value);
+      const ok = await window.AdminCMS.changePassword(f.oldPass.value, f.newPass.value, f.confirmPass.value);
       if (ok) {
         document.getElementById('changePassModal').classList.add('hidden');
         f.reset();

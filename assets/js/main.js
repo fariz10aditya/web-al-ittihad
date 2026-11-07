@@ -1,4 +1,4 @@
-﻿/**
+/**
  * MA AL-ITTIHAD TAWANGSARI - JAVASCRIPT CONTROLLER
  * NPSN: 20584241 | Trowulan - Mojokerto
  */
@@ -183,12 +183,17 @@ function initPpdbForm() {
       status: 'Pending'
     };
 
-    // Save to localStorage
+    // Save to localStorage & Backend Server API
     try {
       localStorage.setItem('ma_alittihad_last_reg', JSON.stringify(regData));
       const history = JSON.parse(localStorage.getItem('ma_alittihad_all_reg') || '[]');
       history.unshift(regData);
       localStorage.setItem('ma_alittihad_all_reg', JSON.stringify(history));
+
+      // Push to Backend Database API
+      if (window.API && window.API.submitPpdb) {
+        window.API.submitPpdb(regData).catch(err => console.warn('[PPDB API] Submit error:', err));
+      }
     } catch (err) {
       console.warn('LocalStorage error:', err);
     }
@@ -487,27 +492,40 @@ window.openQuickWa = function(topic = 'tanya') {
 };
 
 /* ==========================================================================
-   9. DYNAMIC DATA HYDRATION (Sync with Admin CMS)
+   9. DYNAMIC DATA HYDRATION (Sync with Admin CMS & Live Backend)
    ========================================================================== */
-function syncDynamicSiteData() {
+async function syncDynamicSiteData() {
   try {
-    const cfg = JSON.parse(localStorage.getItem('ma_site_config') || 'null');
-    if (cfg && cfg.waNumber) {
+    let siteData = null;
+    if (window.API && window.API.getSiteData) {
+      siteData = await window.API.getSiteData();
+    } else {
+      siteData = {
+        config: JSON.parse(localStorage.getItem('ma_site_config') || '{}'),
+        berita: JSON.parse(localStorage.getItem('ma_site_news') || '[]'),
+        galeri: JSON.parse(localStorage.getItem('ma_site_galeri') || '[]'),
+        ekskul: JSON.parse(localStorage.getItem('ma_site_ekskul') || '[]'),
+        faqs: JSON.parse(localStorage.getItem('ma_site_faqs') || '[]')
+      };
+    }
+
+    const cfg = siteData.config || {};
+
+    // 1. Update Contact Links & Displays
+    if (cfg.waNumber) {
       const cleanWa = cfg.waNumber.replace(/[^0-9]/g, '');
-      // Update any direct WhatsApp links
       document.querySelectorAll('a[href*="wa.me"]').forEach(a => {
         const oldHref = a.getAttribute('href');
         if (oldHref.includes('wa.me/')) {
           a.setAttribute('href', oldHref.replace(/wa\.me\/[0-9]+/, `wa.me/${cleanWa}`));
         }
       });
-      // Update text phone displays if present
       document.querySelectorAll('.site-phone-display').forEach(el => {
         el.textContent = cfg.waNumber;
       });
     }
 
-    if (cfg && cfg.email) {
+    if (cfg.email) {
       document.querySelectorAll('a[href^="mailto:"]').forEach(a => {
         a.setAttribute('href', `mailto:${cfg.email}`);
       });
@@ -515,8 +533,94 @@ function syncDynamicSiteData() {
         el.textContent = cfg.email;
       });
     }
+
+    if (cfg.alamat) {
+      document.querySelectorAll('.site-address-display').forEach(el => {
+        el.textContent = cfg.alamat;
+      });
+    }
+
+    // 2. Render Live Galeri on galeri.html
+    const photoGallery = document.getElementById('photoGallery');
+    if (photoGallery && siteData.galeri && siteData.galeri.length > 0) {
+      const catBadge = {
+        'kelulusan': 'Wisuda & Kelulusan',
+        'santri': 'Kegiatan Santri',
+        'pesantren': 'Pesantren & Masyayikh',
+        'kegiatan': 'Gebyar Seni & PHBI'
+      };
+
+      photoGallery.innerHTML = siteData.galeri.map(g => `
+        <div class="filter-item group bg-white rounded-3xl overflow-hidden border border-cream-200 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between" data-category="${g.category || 'kegiatan'}">
+          <div>
+            <div class="relative h-64 overflow-hidden bg-slate-900 cursor-pointer" onclick="openLightbox('${g.image || 'assets/images/foto-wisuda-santri.jpg'}', '${(g.title || '').replace(/'/g, "\\'")}', '${(g.caption || '').replace(/'/g, "\\'")}')">
+              <img src="${g.image || 'assets/images/foto-wisuda-santri.jpg'}" alt="${g.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-950/85 via-transparent to-transparent opacity-70 group-hover:opacity-90 transition"></div>
+              <span class="absolute top-4 left-4 bg-brand-900/90 text-cream-200 text-[11px] font-bold px-3 py-1 rounded-full uppercase border border-cream-300/40 backdrop-blur-md">
+                ${catBadge[g.category] || g.category || 'Galeri'}
+              </span>
+              <div class="absolute bottom-3 right-3 text-white/80 group-hover:text-white transition">
+                <i class="fa-solid fa-magnifying-glass-plus text-lg"></i>
+              </div>
+            </div>
+            <div class="p-5">
+              <div class="text-xs text-brand-700 font-semibold mb-1 flex items-center gap-1.5">
+                <i class="fa-regular fa-calendar-check text-[11px]"></i>
+                <span>${g.date || 'Dokumentasi'}</span>
+              </div>
+              <h3 class="font-extrabold text-base text-brand-950 group-hover:text-brand-700 transition leading-snug">
+                ${g.title}
+              </h3>
+              <p class="text-xs text-slate-600 leading-relaxed mt-2 line-clamp-3">
+                ${g.caption || ''}
+              </p>
+            </div>
+          </div>
+          <div class="p-5 pt-0">
+            <button type="button" onclick="openLightbox('${g.image || 'assets/images/foto-wisuda-santri.jpg'}', '${(g.title || '').replace(/'/g, "\\'")}', '${(g.caption || '').replace(/'/g, "\\'")}')" class="w-full py-2 px-3 rounded-xl bg-cream-100 hover:bg-cream-200 text-brand-800 text-xs font-bold transition flex items-center justify-center gap-1.5 border border-cream-300">
+              <i class="fa-regular fa-image"></i> Perbesar Foto
+            </button>
+          </div>
+        </div>
+      `).join('');
+
+      initTabFilters();
+    }
+
+    // 3. Render Live Berita on berita.html
+    const beritaGrid = document.querySelector('main .grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-3');
+    if (beritaGrid && siteData.berita && siteData.berita.length > 0 && window.location.pathname.includes('berita')) {
+      beritaGrid.innerHTML = siteData.berita.map(b => `
+        <article class="bg-white rounded-3xl overflow-hidden border border-cream-200 card-hover flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="relative h-52 overflow-hidden group">
+              <img src="${b.image || 'assets/images/foto-kelulusan-ma.jpg'}" alt="${b.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-950/85 via-transparent to-transparent"></div>
+              <span class="absolute top-4 left-4 bg-amber-500 text-brand-950 text-[11px] font-extrabold px-3 py-1 rounded-full uppercase shadow">
+                ${b.category || 'Berita'}
+              </span>
+              <div class="absolute bottom-3 left-4 right-4">
+                <span class="text-xs text-cream-200"><i class="fa-solid fa-calendar-day mr-1"></i> ${b.date || 'Terbaru'}</span>
+                <h3 class="font-bold text-white text-base leading-snug mt-1 line-clamp-2">
+                  ${b.title}
+                </h3>
+              </div>
+            </div>
+            <div class="p-6 text-xs text-slate-600 leading-relaxed line-clamp-3">
+              ${b.summary || b.content || ''}
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <span class="text-brand-800 text-xs font-bold flex items-center gap-1">
+              <i class="fa-solid fa-user-pen text-gold-500"></i> ${b.author || 'Humas MA'}
+            </span>
+          </div>
+        </article>
+      `).join('');
+    }
+
   } catch (err) {
-    console.warn('Sync site error:', err);
+    console.warn('[Sync Site] Error:', err);
   }
 }
 
