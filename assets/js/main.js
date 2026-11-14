@@ -1,4 +1,4 @@
-/**
+﻿/**
  * MA AL-ITTIHAD TAWANGSARI - JAVASCRIPT CONTROLLER
  * NPSN: 20584241 | Trowulan - Mojokerto
  */
@@ -323,7 +323,7 @@ function initPrintHandler() {
     printContainer.innerHTML = `
       <div style="font-family: Arial, sans-serif; padding: 24px; border: 2px solid #064e3b; border-radius: 8px; max-width: 650px; margin: 0 auto;">
         <div style="display: flex; align-items: center; border-bottom: 2px solid #064e3b; padding-bottom: 12px; margin-bottom: 16px;">
-          <img src="assets/images/logo.svg" alt="Logo MA Al-Ittihad" style="width: 70px; height: 70px; margin-right: 16px;" />
+          <img src="assets/images/logo.png" alt="Logo MA Al-Ittihad" style="width: 70px; height: 70px; margin-right: 16px;" />
           <div>
             <h2 style="margin: 0; color: #064e3b; font-size: 18px; text-transform: uppercase; font-weight: bold;">MADRASAH ALIYAH AL-ITTIHAD TAWANGSARI</h2>
             <p style="margin: 2px 0; font-size: 12px; color: #334155;">YPIS & Pondok Pesantren Al-Ittihad • Terakreditasi B • NPSN: 20584241</p>

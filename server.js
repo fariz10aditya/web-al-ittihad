@@ -43,7 +43,8 @@ const MIME_TYPES = {
 function readDB() {
   try {
     if (!fs.existsSync(DB_FILE)) return {};
-    const raw = fs.readFileSync(DB_FILE, 'utf-8');
+    let raw = fs.readFileSync(DB_FILE, 'utf-8');
+    if (raw && raw.charCodeAt(0) === 0xFEFF) raw = raw.slice(1);
     return JSON.parse(raw);
   } catch (err) {
     console.error('[DB Error] Failed to read database:', err);

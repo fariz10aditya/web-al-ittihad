@@ -1,14 +1,298 @@
 {
-  "config": {
-    "namaMadrasah": "MA AL ITTIHAD",
-    "namaLengkap": "MADRASAH ALIYAH AL ITTIHAD",
-    "npsn": "20584241",
-    "akreditasi": "A",
-    "skOperasional": "K88JHIU2",
-    "tahunBerdiriMA": "",
-    "pendiriMA": "",
-    "sambutan": "",
-    "visi": "",
-    "misi": []
-  }
+    "config":  {
+                   "namaMadrasah":  "MAS AL ITTIHAD",
+                   "namaLengkap":  "MA AL-ITTIHAD TAWANGSARI",
+                   "akronim":  "MALTA",
+                   "npsn":  "20584241",
+                   "akreditasi":  "B",
+                   "skOperasional":  "MAS/16.0033/2017",
+                   "tmtOperasional":  "20-09-2017",
+                   "tahunBerdiriMA":  "2000",
+                   "tahunBerdiriPonpes":  "1956",
+                   "pendiriMA":  "KH. Albazi Nawawi",
+                   "pendiriPonpes":  "KH. Nawawi Ramli",
+                   "kepalaMadrasah":  "KH. Albazi Nawawi",
+                   "naungan":  "Yayasan Pendidikan Islam dan Sosial (YPIS) \u0026 Pondok Pesantren Al-Ittihad",
+                   "kementerian":  "Kementerian Agama Republik Indonesia (Kemenag)",
+                   "motto":  "Membangun Generasi Qur\u0027ani, Berakhlak Mulia \u0026 Mandiri",
+                   "mottoArab":  "ÙŠÙŽØ±Ù’ÙÙŽØ¹Ù Ø§Ù„Ù„Ù‘Ù°Ù‡Ù Ø§Ù„Ù‘ÙŽØ°ÙÙŠÙ’Ù†ÙŽ Ø§Ù°Ù…ÙŽÙ†ÙÙˆÙ’Ø§ Ù…ÙÙ†Ù’ÙƒÙÙ…Ù’ ÙˆÙŽØ§Ù„Ù‘ÙŽØ°ÙÙŠÙ’Ù†ÙŽ Ø§ÙÙˆÙ’ØªÙÙˆØ§ Ø§Ù„Ù’Ø¹ÙÙ„Ù’Ù…ÙŽ Ø¯ÙŽØ±ÙŽØ¬Ù°ØªÙ",
+                   "sambutan":  "MA Al-Ittihad Tawangsari hadir di jantung sejarah Trowulan, Mojokerto, sebagai wadah pendidikan menengah atas yang didirikan pada tahun 2000 oleh KH. Albazi Nawawi di lingkungan Pondok Pesantren Al-Ittihad (yang dirintis sejak 1956 oleh KH. Nawawi Ramli). Kami berkomitmen mencetak insan yang seimbang antara kedalaman spiritual, keluhuran akhlak, dan kematangan intelektual.",
+                   "visi":  "Terwujudnya Generasi Santri yang Qur\u0027ani, Berakhlakul Karimah, Unggul dalam Prestasi Intelektual, serta Mandiri dalam Berkehidupan Bermasyarakat.",
+                   "misi":  [
+                                "Menyelenggarakan pendidikan Islam yang memadukan kurikulum Kemenag dengan pembelajaran Al-Qur\u0027an dan kitab kuning.",
+                                "Membiasakan pengamalan akhlak mulia dan adab santri dalam pergaulan sehari-hari berlandaskan ajaran Ahlussunnah wal Jama\u0027ah.",
+                                "Meningkatkan mutu proses belajar mengajar sains, teknologi, dan bahasa asing (Arab \u0026 Inggris) secara aktif.",
+                                "Membekali peserta didik dengan keterampilan hidup (life skills), kewirausahaan kreatif, dan kemandirian mental."
+                            ],
+                   "waNumber":  "085706666126",
+                   "email":  "maalit2000@gmail.com",
+                   "alamat":  "Jl. Raden Wijaya No. 105, Dusun Tawangsari, Desa Tawangsari, Kec. Trowulan, Kab. Mojokerto, Jawa Timur 61362",
+                   "jamOperasional":  "Sabtu - Kamis: 07.30 - 14.30 WIB (Jum\u0027at Libur)",
+                   "mapsLink":  "https://maps.app.goo.gl/MxdgsESSReQPp4oW8",
+                   "mapsEmbed":  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.510344402636!2d112.3813133!3d-7.5118452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e786b595213606f%3A0x7d6a5e119bc181e1!2sPondok%20Pesantren%20Al%20Ittihad!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid",
+                   "instagram":  "@galery_malta",
+                   "youtube":  "Multimedia MALTA",
+                   "facebook":  "MA Al-Ittihad Tawangsari",
+                   "logo":  "assets/images/logo.png"
+               },
+    "berita":  [
+                   {
+                       "id":  1,
+                       "title":  "Tasyakuran Pelepasan \u0026 Kelulusan Santri MA Al-Ittihad Tawangsari",
+                       "category":  "Akademik \u0026 Kelulusan",
+                       "date":  "10 Mei 2026",
+                       "author":  "Humas MA Al-Ittihad",
+                       "image":  "assets/images/foto-kelulusan-ma.jpg",
+                       "summary":  "Momen penuh haru dan kebanggaan pelepasan wisudawan-wisudawati MA Al-Ittihad Tawangsari yang siap mengabdi di masyarakat dan melangkah ke perguruan tinggi favorit.",
+                       "content":  "Rasa syukur mendalam civitas akademika MA Al-Ittihad Tawangsari melepas para lulusan yang telah menyelesaikan masa studi. Acara diisi dengan pembacaan syahadah, doa bersama para pengasuh masyayikh, serta pemberian penghargaan bagi santri berprestasi akademik dan tahfidz."
+                   },
+                   {
+                       "id":  2,
+                       "title":  "Gebyar Pentas Seni Santri MA \u0026 Ponpes Al-Ittihad Tawangsari",
+                       "category":  "Seni \u0026 Budaya",
+                       "date":  "24 April 2026",
+                       "author":  "OSIS \u0026 Santri MALTA",
+                       "image":  "assets/images/foto-pentas-seni.jpg",
+                       "summary":  "Panggung kreasi santri menampilkan al-banjari, pidato 3 bahasa, teatrikal sejarah Islam Trowulan, dan kaligrafi santri putra-putri.",
+                       "content":  "Ajang tahunan panggung kreasi santri Al-Ittihad menyedot antusiasme ratusan wali santri dan warga sekitar. Penampilan grup al-banjari MALTA berpadu apik dengan orasi kebangsaan multibahasa dan pameran kaligrafi islami karya santri."
+                   },
+                   {
+                       "id":  3,
+                       "title":  "Haflah Khotmil Qur\u0027an \u0026 Wisuda Santri Pondok Pesantren Al-Ittihad",
+                       "category":  "Pesantren \u0026 Tahfidz",
+                       "date":  "18 Maret 2026",
+                       "author":  "Pengasuh PPTQ Al-Ittihad",
+                       "image":  "assets/images/foto-wisuda-santri.jpg",
+                       "summary":  "Momen sakral pengukuhan santri tahfidzul Qur\u0027an dan kelulusan santri kitab kuning di hadapan para masyaikh, dewan guru, dan wali santri.",
+                       "content":  "Sebanyak puluhan santri resmi diwisuda setelah menuntaskan hafalan Al-Qur\u0027an dan setoran sanad. Pengasuh pondok pesantren berpesan agar para wisudawan senantiasa menjaga muraja\u0027ah dan mengamalkan akhlak Qur\u0027ani di tengah masyarakat."
+                   },
+                   {
+                       "id":  4,
+                       "title":  "Peringatan Haul Akbar KH. Nawawi Romli \u0026 Masyayikh Pesantren",
+                       "category":  "Tradisi Pesantren",
+                       "date":  "02 Februari 2026",
+                       "author":  "Panitia Haul Akbar",
+                       "image":  "assets/images/foto-haul-kh-nawawi.jpg",
+                       "summary":  "Ribuan alumni, santri, dan masyarakat berkumpul mengenang jasa al-maghfur lah KH. Nawawi Ramli yang merintis Pondok Pesantren Al-Ittihad Tawangsari sejak 1956.",
+                       "content":  "Majelis tahlil akbar, khataman Al-Qur\u0027an, dan mauidhoh hasanah para ulama Jawa Timur mewarnai peringatan haul akbar. Semangat perjuangan dan keikhlasan perintis pesantren menjadi teladan abadi bagi seluruh generasi penerus MA Al-Ittihad."
+                   },
+                   {
+                       "id":  5,
+                       "title":  "Peringatan Maulid Nabi Muhammad SAW Bersama Civitas MA Al-Ittihad",
+                       "category":  "Ibadah \u0026 Dakwah",
+                       "date":  "16 Januari 2026",
+                       "author":  "Remaja Masjid Al-Ittihad",
+                       "image":  "assets/images/foto-maulid-nabi.jpg",
+                       "summary":  "Gema shalawat al-barzanji dan mauidhoh hasanah memupuk rasa mahabbah kepada Rasulullah SAW dalam kehidupan para santri putra dan putri.",
+                       "content":  "Kegiatan maulid nabi diselenggarakan secara khidmat dengan pembacaan qashidah burdah dan simtuddurar. Ditekankan pentingnya meneladani budi pekerti luhur Rasulullah SAW dalam pergaulan sehari-hari santri."
+                   },
+                   {
+                       "id":  6,
+                       "title":  "Pengembangan Sarana Belajar \u0026 Balai Latihan Vokasi Kampus Tawangsari",
+                       "category":  "Fasilitas Kampus",
+                       "date":  "05 Desember 2025",
+                       "author":  "Sarpras Madrasah",
+                       "image":  "assets/images/foto-gedung-pesantren.jpg",
+                       "summary":  "MA Al-Ittihad terus memperluas laboratorium komputer, sarana asrama santri, dan balai latihan kewirausahaan guna menunjang kemandirian lulusan.",
+                       "content":  "Dalam rangka meningkatkan kualitas lulusan, MA Al-Ittihad melengkapi fasilitas ruang laboratorium multimedia, perangkat komputer modern untuk ANBK, dan sarana balai kerja vokasi keterampilan mandiri."
+                   }
+               ],
+    "galeri":  [
+                   {
+                       "id":  1,
+                       "title":  "Tasyakuran \u0026 Wisuda Kelulusan Siswa MA Al-Ittihad",
+                       "category":  "kelulusan",
+                       "image":  "assets/images/foto-kelulusan-ma.jpg",
+                       "caption":  "Momen penuh kebahagiaan prosesi kelulusan dan tasyakuran santri MA Al-Ittihad Tawangsari.",
+                       "date":  "Mei 2026"
+                   },
+                   {
+                       "id":  2,
+                       "title":  "Haflah Wisuda Santri Ponpes Al-Ittihad",
+                       "category":  "santri",
+                       "image":  "assets/images/foto-wisuda-santri.jpg",
+                       "caption":  "Prosesi sakral wisuda santri tahfidz dan diniyah Pondok Pesantren Al-Ittihad.",
+                       "date":  "Maret 2026"
+                   },
+                   {
+                       "id":  3,
+                       "title":  "Kompleks Kampus MA \u0026 Pesantren Al-Ittihad",
+                       "category":  "pesantren",
+                       "image":  "assets/images/foto-gedung-pesantren.jpg",
+                       "caption":  "Gedung kampus madrasah dan asrama pesantren di Jl. Raden Wijaya No. 105 Tawangsari.",
+                       "date":  "2026"
+                   },
+                   {
+                       "id":  4,
+                       "title":  "KH. Albazi Nawawi - Pendiri MA Al-Ittihad",
+                       "category":  "pesantren",
+                       "image":  "assets/images/foto-kh-albazi-nawawi.jpg",
+                       "caption":  "Romo KH. Albazi Nawawi, Pendiri MA Al-Ittihad (th 2000) dan Pengasuh PPTQ Al-Ittihad.",
+                       "date":  "Dokumentasi Masyayikh"
+                   },
+                   {
+                       "id":  5,
+                       "title":  "Gebyar Pentas Seni Santri Akhirussanah",
+                       "category":  "kegiatan",
+                       "image":  "assets/images/foto-pentas-seni.jpg",
+                       "caption":  "Panggung gembira akhirussanah menampilkan seni hadrah banjari dan teater santri.",
+                       "date":  "April 2026"
+                   },
+                   {
+                       "id":  6,
+                       "title":  "Haul Akbar KH. Nawawi Ramli \u0026 Para Pendiri",
+                       "category":  "pesantren",
+                       "image":  "assets/images/foto-haul-kh-nawawi.jpg",
+                       "caption":  "Peringatan haul akbar KH. Nawawi Ramli yang dihadiri ribuan santri, alumni, dan jamaah.",
+                       "date":  "Februari 2026"
+                   },
+                   {
+                       "id":  7,
+                       "title":  "Peringatan Maulid Nabi Muhammad SAW",
+                       "category":  "kegiatan",
+                       "image":  "assets/images/foto-maulid-nabi.jpg",
+                       "caption":  "Gema shalawat nabi dan mauidhoh hasanah civitas akademika MA Al-Ittihad.",
+                       "date":  "Januari 2026"
+                   },
+                   {
+                       "id":  8,
+                       "title":  "Rutinan Simaan \u0026 Kajian Kitab Kuning",
+                       "category":  "santri",
+                       "image":  "assets/images/foto-rutinan-santri.jpg",
+                       "caption":  "Halaqah simaan Al-Qur\u0027an dan sorogan kitab kuning santri putra dan putri.",
+                       "date":  "Kegiatan Rutin"
+                   },
+                   {
+                       "id":  9,
+                       "title":  "Musyawarah \u0026 Rapat Koordinasi Yayasan",
+                       "category":  "pesantren",
+                       "image":  "assets/images/foto-kegiatan-yayasan.jpg",
+                       "caption":  "Rapat kerja dewan pembina dan pengurus Yayasan Pendidikan Islam dan Sosial (YPIS) Al-Ittihad.",
+                       "date":  "Agenda Yayasan"
+                   }
+               ],
+    "ekskul":  [
+                   {
+                       "id":  1,
+                       "name":  "Seni Rebana / Hadrah Banjari",
+                       "category":  "Keagamaan",
+                       "schedule":  "Senin \u0026 Kamis malam",
+                       "desc":  "Pelatihan vokal sholawat dan ketukan rebana klasik kontemporer."
+                   },
+                   {
+                       "id":  2,
+                       "name":  "Pimpinan Komisariat IPNU - IPPNU",
+                       "category":  "Organisasi",
+                       "schedule":  "Sabtu siang",
+                       "desc":  "Kaderisasi kepemimpinan pelajar Nahdliyyin dan musyawarah keorganisasian."
+                   },
+                   {
+                       "id":  3,
+                       "name":  "Gerakan Pramuka Gugus Depan",
+                       "category":  "Organisasi",
+                       "schedule":  "Jum\u0027at sore",
+                       "desc":  "Pendidikan kepanduan, kedisiplinan, pioneering, dan survival kemah santri."
+                   },
+                   {
+                       "id":  4,
+                       "name":  "Qira\u0027ah \u0026 Tilawatil Qur\u0027an",
+                       "category":  "Keagamaan",
+                       "schedule":  "Selasa sore",
+                       "desc":  "Bimbingan lagu maqam tilawah untuk persiapan ajang MTQ kabupaten/provinsi."
+                   },
+                   {
+                       "id":  5,
+                       "name":  "Teater Pelajar \u0026 Cipta Puisi",
+                       "category":  "Seni",
+                       "schedule":  "Rabu sore",
+                       "desc":  "Latihan seni peran sastra, deklamasi puisi, dan penulisan karya kreatif."
+                   },
+                   {
+                       "id":  6,
+                       "name":  "Futsal \u0026 Bola Voli Santri",
+                       "category":  "Olahraga",
+                       "schedule":  "Ahad pagi \u0026 sore",
+                       "desc":  "Kebugaran jasmani dan pembinaan tim olahraga untuk Liga Santri Mojokerto."
+                   },
+                   {
+                       "id":  7,
+                       "name":  "Kreasi Kuliner \u0026 Tata Boga",
+                       "category":  "Vokasi",
+                       "schedule":  "Sabtu pagi",
+                       "desc":  "Pelatihan pengolahan pangan bernilai ekonomi dan resep inovasi."
+                   },
+                   {
+                       "id":  8,
+                       "name":  "Laboratorium IT \u0026 Desain Grafis",
+                       "category":  "Vokasi",
+                       "schedule":  "Rabu sore",
+                       "desc":  "Penguasaan aplikasi perkantoran, desain grafis, dan fotografi madrasah."
+                   }
+               ],
+    "faqs":  [
+                 {
+                     "id":  1,
+                     "q":  "Apakah santri MA Al-Ittihad wajib mondok / tinggal di asrama?",
+                     "a":  "Tidak wajib. MA Al-Ittihad menyediakan dua sistem: Boarding (Santri Mukim di asrama pesantren Al-Ittihad) dan Non-Boarding (Siswa laju/pulang-pergi dari rumah)."
+                 },
+                 {
+                     "id":  2,
+                     "q":  "Apakah ijazah MA Al-Ittihad diakui untuk masuk PTN favorit?",
+                     "a":  "Sangat diakui! MA Al-Ittihad memiliki NPSN resmi 20584241, Terakreditasi B oleh BAN-PDM Kemenag. Lulusan berhak mendaftar SNBP, SNBT, SPAN-PTKIN, dan beasiswa internasional seperti Universitas Al-Azhar Kairo."
+                 },
+                 {
+                     "id":  3,
+                     "q":  "Bagaimana cara mendaftar secara online?",
+                     "a":  "Cukup buka halaman PPDB Online di website ini, isi formulir dengan lengkap, lalu klik Kirim Pendaftaran. Anda akan langsung mendapatkan Nomor Registrasi dan tombol konfirmasi ke WhatsApp Panitia."
+                 },
+                 {
+                     "id":  4,
+                     "q":  "Apakah ada beasiswa di MA Al-Ittihad?",
+                     "a":  "Ya, madrasah menyediakan Beasiswa Tahfidz Al-Qur\u0027an (bebas SPP), Beasiswa Prestasi Akademik/Non-Akademik, serta Program Indonesia Pintar (PIP) bagi santri yatim atau kurang mampu."
+                 }
+             ],
+    "ppdb":  [
+                 {
+                     "regCode":  "PPDB-ALIT-2026-8812",
+                     "tanggalDaftar":  "Senin, 02 Maret 2026",
+                     "nama":  "Ahmad Fauzi Rahman",
+                     "nisn":  "0089123456",
+                     "nik":  "3516012304080001",
+                     "jenisKelamin":  "Laki-laki",
+                     "asalSekolah":  "MTs Negeri 1 Mojokerto",
+                     "jalur":  "Tahfidz",
+                     "peminatan":  "Keagamaan (IIK)",
+                     "sistemTinggal":  "Boarding (Asrama Pesantren)",
+                     "namaWali":  "Drs. H. Muhammad Ilyas",
+                     "noHp":  "081234567890",
+                     "alamat":  "Desa Bejijong, Kec. Trowulan, Kab. Mojokerto",
+                     "status":  "Diterima",
+                     "catatan":  "Hafal 5 Juz, berkas diverifikasi lengkap."
+                 },
+                 {
+                     "regCode":  "PPDB-ALIT-2026-9045",
+                     "tanggalDaftar":  "Rabu, 11 Maret 2026",
+                     "nama":  "Siti Nur Aisyah",
+                     "nisn":  "0087654321",
+                     "nik":  "3516016208080002",
+                     "jenisKelamin":  "Perempuan",
+                     "asalSekolah":  "SMP Plus Al-Hidayah Trowulan",
+                     "jalur":  "Reguler",
+                     "peminatan":  "MIPA",
+                     "sistemTinggal":  "Non-Boarding (Laju / Pulang-Pergi)",
+                     "namaWali":  "Hj. Ruqayyah",
+                     "noHp":  "085678901234",
+                     "alamat":  "Dusun Tawangsari RT 02 RW 01, Trowulan",
+                     "status":  "Terverifikasi",
+                     "catatan":  "Menunggu tes wawancara peminatan."
+                 }
+             ],
+    "users":  [
+                  {
+                      "username":  "admin",
+                      "password":  "alittihad2026",
+                      "role":  "Super Admin",
+                      "name":  "Operator MA Al-Ittihad"
+                  }
+              ]
 }

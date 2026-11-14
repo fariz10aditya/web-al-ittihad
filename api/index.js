@@ -11,11 +11,15 @@ function readDB() {
   if (memoryDB) return memoryDB;
   try {
     if (fs.existsSync(TMP_DB)) {
-      memoryDB = JSON.parse(fs.readFileSync(TMP_DB, 'utf-8'));
+      let raw = fs.readFileSync(TMP_DB, 'utf-8');
+      if (raw && raw.charCodeAt(0) === 0xFEFF) raw = raw.slice(1);
+      memoryDB = JSON.parse(raw);
       return memoryDB;
     }
     if (fs.existsSync(DB_FILE)) {
-      memoryDB = JSON.parse(fs.readFileSync(DB_FILE, 'utf-8'));
+      let raw = fs.readFileSync(DB_FILE, 'utf-8');
+      if (raw && raw.charCodeAt(0) === 0xFEFF) raw = raw.slice(1);
+      memoryDB = JSON.parse(raw);
       return memoryDB;
     }
   } catch (e) {}
