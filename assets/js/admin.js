@@ -207,7 +207,7 @@ window.AdminCMS = {
             ${p.asalSekolah || '-'}
           </td>
           <td class="py-3 px-3 text-xs">
-            <span class="font-bold text-slate-800 block">${p.peminatan || 'MIPA'}</span>
+            <span class="font-bold text-slate-800 block">${p.peminatanEskul || p.peminatan || 'Seni Hadrah & Al-Banjari'}</span>
             <span class="text-[10px] text-brand-800 font-semibold">${p.jalur || 'Reguler'}</span>
           </td>
           <td class="py-3 px-3 text-xs text-slate-600">
@@ -269,7 +269,7 @@ Yth. Bapak/Ibu Wali Santri dari *${item.nama}*,
 
 Kami dari Panitia PPDB *MA AL-ITTIHAD TAWANGSARI (Trowulan - Mojokerto)* mengonfirmasi pendaftaran calon siswa dengan rincian:
 • No. Registrasi: *${item.regCode}*
-• Peminatan    : *${item.peminatan}*
+• Eskul Minat   : *${item.peminatanEskul || item.peminatan || '-'}*
 • Jalur        : *${item.jalur}*
 • Status       : *${item.status || 'Terverifikasi'}*
 

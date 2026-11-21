@@ -1,4 +1,4 @@
-﻿/**
+/**
  * MA AL-ITTIHAD TAWANGSARI - JAVASCRIPT CONTROLLER
  * NPSN: 20584241 | Trowulan - Mojokerto
  */
@@ -218,7 +218,7 @@ NPSN: 20584241 | Kab. Mojokerto
 
 🎓 *PILIHAN PENDIDIKAN:*
 • Jalur Daftar : *${jalur}*
-• Peminatan    : *${peminatan}*
+• Eskul Minat   : *${peminatan}*
 • Status Hunian: *${sistemTinggal}*
 
 👨‍👩‍👧 *DATA WALI & KONTAK:*

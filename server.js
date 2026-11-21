@@ -173,6 +173,9 @@ const server = http.createServer(async (req, res) => {
           berita: db.berita || [],
           galeri: db.galeri || [],
           ekskul: db.ekskul || [],
+          prestasi: db.prestasi || [],
+          alumniKuliah: db.alumniKuliah || [],
+          jadwalHarian: db.jadwalHarian || {},
           faqs: db.faqs || []
         });
       }
